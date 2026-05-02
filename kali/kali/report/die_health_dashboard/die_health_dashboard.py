@@ -14,9 +14,9 @@ def get_columns():
 		{"label": _("Die Name"), "fieldname": "die_name", "fieldtype": "Data", "width": 180},
 		{"label": _("Alloy"), "fieldname": "alloy_grade", "fieldtype": "Data", "width": 70},
 		{"label": _("Shots Used"), "fieldname": "total_shots_used", "fieldtype": "Int", "width": 100},
-		{"label": _("Max Shots"), "fieldname": "max_shots_before_maintenance", "fieldtype": "Int", "width": 100},
+		{"label": _("Max Shots"), "fieldname": "max_shots_allowed", "fieldtype": "Int", "width": 100},
 		{"label": _("Shot Life %"), "fieldname": "shot_life_bar", "fieldtype": "HTML", "width": 160},
-		{"label": _("Last Nitriding"), "fieldname": "last_nitriding_date", "fieldtype": "Date", "width": 110},
+		{"label": _("Last Maintenance"), "fieldname": "last_maintenance_date", "fieldtype": "Date", "width": 120},
 		{"label": _("Nitriding Count"), "fieldname": "nitriding_count", "fieldtype": "Int", "width": 110},
 		{"label": _("Maintenance Cost"), "fieldname": "total_maint_cost", "fieldtype": "Currency", "width": 130},
 		{"label": _("Condition"), "fieldname": "condition_badge", "fieldtype": "HTML", "width": 120},
@@ -27,8 +27,8 @@ def get_data(filters):
 	rows = frappe.db.sql("""
 		SELECT
 			die_number, die_name, alloy_grade, total_shots_used,
-			max_shots_before_maintenance, die_condition, die_status,
-			last_nitriding_date
+			max_shots_allowed, die_status,
+			last_maintenance_date
 		FROM `tabDie Master`
 		WHERE docstatus < 2
 		ORDER BY die_number
@@ -65,7 +65,7 @@ def get_data(filters):
 		r.total_maint_cost = m.get("total_cost") or 0
 
 		shots = r.total_shots_used or 0
-		max_shots = r.max_shots_before_maintenance or 1
+		max_shots = r.max_shots_allowed or 1
 		pct = min(shots / max_shots * 100, 100)
 		bar_color = "#28a745" if pct < 70 else ("#ffc107" if pct < 90 else "#dc3545")
 		r.shot_life_bar = (
@@ -74,7 +74,7 @@ def get_data(filters):
 			f'</div>'
 		)
 
-		cond_color, cond_label = condition_map.get(r.die_condition, ("#999", r.die_condition or "-"))
+		cond_color, cond_label = condition_map.get(r.die_status, ("#999", r.die_status or "-"))
 		r.condition_badge = f'<span style="color:{cond_color};font-weight:600">{cond_label}</span>'
 
 		stat_color, stat_label = status_map.get(r.die_status, ("#999", r.die_status or "-"))
@@ -87,7 +87,7 @@ def get_chart(data):
 		return {}
 	labels = [r.get("die_number", "") for r in data]
 	shots = [r.get("total_shots_used") or 0 for r in data]
-	max_shots = [r.get("max_shots_before_maintenance") or 0 for r in data]
+	max_shots = [r.get("max_shots_allowed") or 0 for r in data]
 	return {
 		"data": {
 			"labels": labels,

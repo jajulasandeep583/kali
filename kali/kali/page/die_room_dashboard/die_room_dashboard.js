@@ -43,8 +43,8 @@ frappe.pages['die-room-dashboard'].on_page_load = function(wrapper) {
 				'Condemned': '#dc3545', 'Retired': '#6c757d'
 			};
 			var sc = status_colors[d.die_status] || '#6c757d';
-			var cond_colors = { 'New': '#17a2b8', 'Good': '#28a745', 'Worn': '#ffc107', 'Needs Repair': '#fd7e14', 'Condemned': '#dc3545' };
-			var cc = cond_colors[d.die_condition] || '#6c757d';
+			var cond_colors = { 'Active': '#28a745', 'Under Maintenance': '#ffc107', 'Condemned': '#dc3545', 'Retired': '#6c757d' };
+			var cc = cond_colors[d.die_status] || '#6c757d';
 			var border = pct >= 90 ? '2px solid #dc3545' : pct >= 75 ? '2px solid #ffc107' : '1px solid #e9ecef';
 			return `
 			<div style="background:#fff;border-radius:10px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,0.07);border:${border};cursor:pointer" onclick="frappe.set_route('Form','Die Master','${d.die_number}')">
@@ -57,7 +57,7 @@ frappe.pages['die-room-dashboard'].on_page_load = function(wrapper) {
 				</div>
 				<div style="margin-bottom:8px">
 					<div style="display:flex;justify-content:space-between;font-size:10px;color:#888;margin-bottom:3px">
-						<span>Shot Life</span><span>${d.total_shots_used||0}/${d.max_shots_before_maintenance||'?'}</span>
+						<span>Shot Life</span><span>${d.total_shots_used||0}/${d.max_shots_allowed||'?'}</span>
 					</div>
 					<div style="background:#e9ecef;border-radius:4px;height:8px;overflow:hidden">
 						<div style="width:${pct}%;background:${bar_color};height:100%;transition:width 0.3s"></div>
@@ -66,7 +66,7 @@ frappe.pages['die-room-dashboard'].on_page_load = function(wrapper) {
 				</div>
 				<div style="display:flex;justify-content:space-between;align-items:center">
 					<span style="font-size:10px;color:#aaa">${d.alloy_grade||''} | ${d.die_shape||''}</span>
-					<span style="background:${cc};color:#fff;padding:1px 6px;border-radius:8px;font-size:9px">${d.die_condition||''}</span>
+					<span style="background:${cc};color:#fff;padding:1px 6px;border-radius:8px;font-size:9px">${d.die_status||''}</span>
 				</div>
 				${pct >= 90 ? '<div style="background:#fdecea;color:#dc3545;font-size:10px;font-weight:700;text-align:center;padding:4px;border-radius:4px;margin-top:8px">⚠️ REPLACE SOON</div>' :
 				  pct >= 75 ? '<div style="background:#fff3cd;color:#856404;font-size:10px;text-align:center;padding:4px;border-radius:4px;margin-top:8px">⚠ Plan Maintenance</div>' : ''}

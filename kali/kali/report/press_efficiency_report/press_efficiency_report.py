@@ -20,8 +20,8 @@ def get_columns():
 		{"label": _("Output (Kg)"), "fieldname": "net_output_kg", "fieldtype": "Float", "width": 100},
 		{"label": _("Strokes"), "fieldname": "no_of_billets_used", "fieldtype": "Int", "width": 80},
 		{"label": _("Yield %"), "fieldname": "yield_percentage", "fieldtype": "Float", "width": 90},
-		{"label": _("Avg Ram Speed"), "fieldname": "ram_speed_mmpm", "fieldtype": "Float", "width": 110},
-		{"label": _("Downtime (Hrs)"), "fieldname": "total_downtime_hours", "fieldtype": "Float", "width": 110},
+		{"label": _("Ram Speed (mm/s)"), "fieldname": "ram_speed_mmps", "fieldtype": "Float", "width": 120},
+		{"label": _("Downtime (Mins)"), "fieldname": "downtime_mins", "fieldtype": "Float", "width": 120},
 		{"label": _("Status"), "fieldname": "status_badge", "fieldtype": "HTML", "width": 120},
 	]
 
@@ -39,8 +39,8 @@ def get_data(filters):
 			net_output_kg,
 			no_of_billets_used,
 			yield_percentage,
-			ram_speed_mmpm,
-			total_downtime_hours,
+			ram_speed_mmps,
+			downtime_mins,
 			status
 		FROM `tabExtrusion Job Card`
 		WHERE docstatus < 2

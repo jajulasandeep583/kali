@@ -24,7 +24,7 @@ def get_kpis():
 
 	dies_critical = frappe.db.sql("""
 		SELECT COUNT(*) FROM `tabDie Master`
-		WHERE total_shots_used >= max_shots_before_maintenance * 0.9
+		WHERE total_shots_used >= max_shots_allowed * 0.9
 		AND die_status = 'Active' AND docstatus < 2
 	""")[0][0] or 0
 
@@ -64,10 +64,10 @@ def get_die_alerts():
 		SELECT
 			die_number, die_name,
 			total_shots_used,
-			max_shots_before_maintenance,
-			ROUND(total_shots_used / NULLIF(max_shots_before_maintenance, 0) * 100, 1) as pct
+			max_shots_allowed,
+			ROUND(total_shots_used / NULLIF(max_shots_allowed, 0) * 100, 1) as pct
 		FROM `tabDie Master`
-		WHERE total_shots_used >= max_shots_before_maintenance * 0.75
+		WHERE total_shots_used >= max_shots_allowed * 0.75
 		AND die_status = 'Active' AND docstatus < 2
 		ORDER BY pct DESC
 		LIMIT 8

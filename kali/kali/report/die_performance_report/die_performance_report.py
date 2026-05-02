@@ -23,7 +23,7 @@ def get_columns():
 def get_data(filters):
 	rows = frappe.db.get_all("Die Master",
 		fields=["die_number", "die_name", "die_shape", "total_shots_used",
-				"max_shots_before_maintenance", "last_used_date", "die_status", "alloy_grade"],
+				"max_shots_allowed", "last_used_date", "die_status", "alloy_grade"],
 		order_by="die_number asc"
 	)
 	status_colors = {
@@ -33,7 +33,7 @@ def get_data(filters):
 	result = []
 	for r in rows:
 		total = r.total_shots_used or 0
-		max_s = r.max_shots_before_maintenance or 1
+		max_s = r.max_shots_allowed or 1
 		pct = min(total / max_s * 100, 100) if max_s else 0
 		bar_color = "#28a745" if pct < 70 else ("#ffc107" if pct < 90 else "#dc3545")
 		shot_bar = (
@@ -55,7 +55,7 @@ def get_data(filters):
 			"die_number": r.die_number,
 			"die_name": r.die_name,
 			"total_shots_used": total,
-			"max_shots_allowed": r.max_shots_before_maintenance,
+			"max_shots_allowed": r.max_shots_allowed,
 			"shot_bar": shot_bar,
 			"pct_used": round(pct, 1),
 			"last_used_date": r.last_used_date,
