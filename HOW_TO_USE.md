@@ -1,259 +1,204 @@
-# Aluminium Extrusion Manufacturing ERP - How To Use Guide
+# Aluminium Extrusion Manufacturing ERP — Complete Guide
 
 ## Site Details
-- **URL:** http://kali.local:8000  
-- **Login:** Administrator  
-- **Password:** admin  
-- **ERPNext Version:** v16  
+| Field | Value |
+|-------|-------|
+| **URL** | http://kali.local:8000 |
+| **Login** | Administrator |
+| **Password** | admin |
+| **ERPNext Version** | v16 |
+| **Custom App** | kali (github.com/jajulasandeep583/kali) |
 
 ---
 
-## 1. How to Start the Site Every Day
+## Quick Start — Factory Demo Script (5 minutes)
 
-Open **WSL (Ubuntu)** terminal and run these commands:
+**Step 1:** Login → You'll see **Aluminium Manufacturing** workspace with 28 shortcuts in 7 sections.
 
-```bash
-# Start Redis (cache + queue)
-redis-server ~/frappe-bench/config/redis_cache.conf --daemonize yes
-redis-server ~/frappe-bench/config/redis_queue.conf --daemonize yes
+**Step 2:** Click **Production Dashboard** → Live KPI cards showing today's output, active jobs, 30-day yield%, die alerts, month total.
 
-# Start Web Server (keep this terminal open or use nohup)
-cd ~/frappe-bench
-nohup bench serve --port 8000 > logs/web.log 2>&1 &
+**Step 3:** Click **Job Card Kanban** → Color-coded cards across 9 status columns (Pending → Billet Loaded → Heating → Extruding → Stretching → Aging → QC → Completed → On Hold).
 
-# Start SocketIO
-nohup node apps/frappe/socketio.js > logs/socketio.log 2>&1 &
+**Step 4:** Click **Die Room Dashboard** → Visual grid of all 10 dies with shot-life progress bars. Red border = critical.
 
-# Start background workers
-nohup bench schedule > logs/schedule.log 2>&1 &
-nohup bench worker > logs/worker.log 2>&1 &
-```
+**Step 5:** Click **Die Health Dashboard** (report) → Bar chart + color-coded table showing each die's shot consumption.
 
-**Or use bench start (recommended for development):**
-```bash
-cd ~/frappe-bench
-bench start
-```
-
-Open browser → http://kali.local:8000
+**Step 6:** Click **Shift Summary Report** → Heatmap-style daily table with Morning/Evening/Night efficiency badges.
 
 ---
 
-## 2. Daily Workflow for Production Team
+## System Architecture
 
-### Morning Checklist:
-1. Log in → Go to **Aluminium Manufacturing** workspace
-2. Check pending **Work Orders** (Manufacturing module)
-3. Check **Die Master** - any dies due for maintenance?
-4. Verify **Billet Receipt** stock availability
-5. Create **Extrusion Job Card** for each production run
+### Custom DocTypes (17 total)
 
-### End of Day:
-1. Update all Job Card statuses
-2. Record scrap in **Scrap Record**
-3. Run **Daily Production Summary** report
-4. Update completed **Quality Check** records
+#### Core Operational
+| DocType | Purpose | Key Fields |
+|---------|---------|------------|
+| **Extrusion Job Card** | Heart of production — 90+ fields, 12 sections | die_number, billet_batch, yield_percentage (auto-calc), press parameters, quench/stretch/aging, downtime |
+| **Press Log** | Stroke-by-stroke monitoring | stroke_no, ram_pressure_tons, die_temp_c, profile_exit_temp_c, defect_observed |
+| **Furnace Log** | Billet heating records | furnace_no, target_temp_c, actual_temp_achieved_c, fuel_consumed_units, temp_readings (child table) |
+| **Aging Oven Log** | T5/T6/T66 aging cycles | oven_no, temper_target, soak_hours, final_hardness_hv, result (Pass/Fail/Re-age) |
+| **Production Shift Report** | Shift-level KPIs | shift_date, shift (Morning/Evening/Night), planned_production_kg, actual_production_kg, efficiency_% (auto-calc), safety_incidents |
+| **Billet Cutting Log** | Billet saw operations | cut_length_mm, no_pieces_cut, butt_end_weight_kg, scrap_from_cutting_kg |
 
----
-
-## 3. How to Create a New Job Card
-
-**Path:** Kali Module → Extrusion Job Card → New
-
-Fill these fields:
-1. **Job Card No** - e.g., EJC-2025-002 (auto or manual)
-2. **Shift** - Morning / Evening / Night
-3. **Shift Date** - Today's date
-4. **Press** - Select Extrusion Press 1500T or 2500T
-5. **Die Number** - Select from Die Master (e.g., DIE-001)
-6. **Billet Batch** - Select from Billet Receipt
-7. **Profile Item** - Select the profile being extruded
-8. **Work Order Ref** - Link to production Work Order
-9. Fill in process parameters:
-   - Billet Temp (°C), Ram Pressure (tons), Speed (mpm)
-10. After extrusion: Fill weights (billet used, gross output, scrap)
-11. **Net Output** = Gross - Butt End - Front End Scrap
-12. **Yield %** = (Net Output / Billet Used) × 100
-13. Set **Status** → Update as production progresses
-14. Save and track through stages
+#### Masters
+| DocType | Purpose |
+|---------|---------|
+| **Die Master** | 21 fields — die shape, alloy, shot count, condition, nitriding dates |
+| **Billet Receipt** | Incoming billet batches with COC details |
+| **Customer Drawing** | Drawing register with approval workflow |
+| **Die Maintenance Log** | Routine/Nitriding/Polishing/Repair/Condemned tracking |
+| **Quality Check** | 24-field QC record with dimensional, surface, mechanical checks |
+| **Surface Treatment Order** | Anodizing/powder coat orders |
+| **Scrap Record** | Butt end, front end, handling loss tracking |
 
 ---
 
-## 4. How to Track Order from Sale to Dispatch
+## Live Dashboard Pages
 
-**Full workflow:**
+### Production Dashboard (`/app/alum-dashboard`)
+- **5 KPI cards:** Today output, Active jobs, 30-day avg yield, Critical dies, Month output
+- **Charts:** Daily output bar + Yield trend line (last 14 days)
+- **Die Alerts table:** Dies >75% shot life with progress bars
+- **Recent Jobs table:** Last 8 job cards with yield badges
+- **Auto-refreshes every 60 seconds**
 
-```
-Sales Order → Work Order → Extrusion Job Card → Quality Check 
-→ Surface Treatment Order → Stock Entry → Delivery Note → Sales Invoice → Payment
-```
+### Job Card Kanban (`/app/alum-kanban`)
+- 9 status columns with color coding
+- Each card shows: job no, profile, yield%, press, date/shift
+- Click any card to open the full form
 
-**Step by step:**
-1. **Sales Order** (Selling → Sales Order)
-   - Create with customer, profile item, quantity, rate, delivery date
-   - Submit it
-2. **Work Order** (Manufacturing → Work Order)
-   - Create from Sales Order or directly
-   - Select BOM (BOM-ALU-PROFILE-T-6063-001)
-   - Submit it
-3. **Extrusion Job Card** - Create and track production
-4. **Quality Check** - Record QC results, note approved qty
-5. **Surface Treatment Order** - If powder coating / anodizing needed
-6. **Stock Entry (Manufacture)** - Transfer FG to Finished Goods Warehouse
-7. **Delivery Note** - Against Sales Order, from Finished Goods Warehouse
-8. **Sales Invoice** - Against Delivery Note
-9. **Payment Entry** - Record customer payment
-
-**Tracking report:** Run **Order to Dispatch Tracker** report to see all orders status.
+### Die Room Dashboard (`/app/die-room-dashboard`)
+- Grid of all dies with shot-life progress bars
+- Red border = >90% critical, yellow border = >75% warning
+- Summary KPIs: Total, Active, In Maintenance, Critical, Condemned
+- Click any die card to open Die Master form
 
 ---
 
-## 5. How to Check Die Performance
+## Reports (9 total with charts + color coding)
 
-**Path:** Kali Module → Reports → Die Performance Report
-
-This report shows:
-- Each die's total shots used vs max allowed
-- Remaining shots and % utilization
-- Alert status (Green/Yellow/Red)
-
-**Alert levels:**
-- 🟢 OK - Below 75% utilized
-- 🟡 WARNING - 75-90% utilized (plan maintenance)
-- 🔴 CRITICAL - Above 90% (replace soon)
-
-**To update die shots:** Go to Die Master → Find your die → Update **Total Shots Used** after each production run.
-
-**Die Maintenance:** When a die goes for repair → Change **Die Status** to "Under Repair"
+| Report | Where to Find | Key Feature |
+|--------|--------------|-------------|
+| **Daily Production Summary** | Analytics section | Yield badges (green/blue/yellow/red), axis-mixed chart |
+| **Press Efficiency Report** | Analytics | Excellent/Good/Average/Poor status badges, line+bar chart |
+| **Shift Summary Report** | Analytics | Day-view heatmap with M/E/N efficiency, safety incident flag |
+| **Die Performance Report** | Analytics | Shot-life progress bars, per-die bar chart |
+| **Die Health Dashboard** | Analytics | Shot life vs max comparison, condition badges |
+| **Scrap Analysis Report** | Analytics | Type badges, donut chart by scrap type |
+| **Aging Oven Tracker** | Analytics | Pass/Fail/Re-age badges, donut chart |
+| **Customer Order Status** | Analytics | Progress bars per order, overdue highlight red |
+| **Order to Dispatch Tracker** | Analytics | Dispatch progress bar, overdue flag |
 
 ---
 
-## 6. How to Record Scrap
+## Client Scripts (Auto-Calculations)
 
-**Path:** Kali Module → Scrap Record → New
+### Extrusion Job Card
+- **Yield auto-calc:** Enter billet weight + net output → yield% and recovery% fill automatically
+- **Low yield alert:** If yield drops below 80%, orange flash-alert appears on screen
+- **Die shot warning:** When die_number is entered, checks shot life — popup if >90%
+- **Condemned die block:** Popup warning if selected die is condemned
+- **Billet batch → Alloy:** Selecting billet batch auto-fills alloy grade
 
-Fill:
-1. **Scrap No** - e.g., SCRAP-2025-003
-2. **Scrap Date** - Date of generation
-3. **Job Card** - Link to the Extrusion Job Card
-4. **Scrap Type:**
-   - Butt End (from press)
-   - Front Cut (from runout)
-   - Rejection (quality failure)
-   - Surface Defect (from surface treatment)
-   - Other
-5. **Alloy Grade** - 6063 or 6061
-6. **Weight (Kg)** - Actual scrap weight
-7. **Recovery Amount** - Value from scrap dealer
+### Die Master
+- **Shot life headline alert:** Red banner if >95% used, yellow if >80%
+- **Quick buttons:** "View Maintenance Logs" and "View Job Cards" added to toolbar
 
-**Types of scrap in extrusion:**
-| Type | Source | Typical % |
-|------|--------|-----------|
-| Butt End | Extrusion press | 7-10% |
-| Front Cut | Runout table | 1-3% |
-| Rejection | QC failure | <2% |
-| Surface Defect | After coating | <1% |
+### Quality Check
+- **Auto-overall result:** All 4 check results auto-set Overall Result (Pass/Fail/Conditional)
+
+### Production Shift Report
+- **Efficiency calc:** Actual ÷ Planned × 100 fills Efficiency% automatically
+- **Yield calc:** Actual ÷ Billet × 100 fills Shift Yield% automatically
+- **Safety incident:** Makes Safety Details mandatory when safety flag is checked
 
 ---
 
-## 7. How to Run Reports
+## Dummy Data Summary (3 months: Feb–Apr 2025)
 
-**Path:** Kali Module → Reports section
-
-Available reports:
-
-### Daily Production Summary
-- Shows all job cards by date
-- Filter by: From Date, To Date, Shift
-- Key metrics: Billet Used, Output, Scrap, Yield%
-
-### Die Performance Report
-- Lists all dies with shot count and health status
-- Highlights dies needing attention
-- No filters needed - shows all dies
-
-### Scrap Analysis Report
-- Breakdown of all scrap by type
-- Filter by: From Date, To Date, Scrap Type
-- Shows recovery value totals
-
-### Order to Dispatch Tracker
-- End-to-end order fulfillment status
-- Shows: Ordered → Produced → Dispatched → Pending
-- Filter by: Customer, Date range
-
-**To run a report:** Click on report name → Set filters → Click "Run"
+| Entity | Count |
+|--------|-------|
+| Customers | 10 (7 new + 3 from Phase 1-8) |
+| Dies | 10 (DIE-001 to DIE-010) |
+| Billet Batches | 6 (BILLET-2025-001 to 006) |
+| Extrusion Job Cards | 8 (EJC-2025-001 to 008) |
+| Press Logs | 20 (for EJC-2025-001, strokes 1-20, defects on #8 & #14) |
+| Furnace Logs | 5 |
+| Aging Oven Logs | 3 (2 Pass, 1 Re-age) |
+| Die Maintenance Logs | 8 (DIE-001: 2 nitriding + 1 polish; DIE-005: condemned) |
+| Customer Drawings | 5 |
+| Production Shift Reports | 90 (30 days × 3 shifts, Feb–Mar 2025) |
 
 ---
 
-## 8. Key DocTypes Reference
+## Standard Operating Procedure
 
-| DocType | Purpose | Navigation |
-|---------|---------|-----------|
-| Die Master | Track dies - shots, status, maintenance | Kali → Die Master |
-| Billet Receipt | Incoming billet batches with QC data | Kali → Billet Receipt |
-| Extrusion Job Card | Daily production records per shift | Kali → Extrusion Job Card |
-| Quality Check | QC results - dimensions, hardness, finish | Kali → Quality Check |
-| Surface Treatment Order | Powder coat / anodize tracking | Kali → Surface Treatment Order |
-| Scrap Record | Record and track all scrap | Kali → Scrap Record |
+### Daily Start-Up
+1. Login → Aluminium Manufacturing workspace
+2. Open **Production Dashboard** → check die alert count and active jobs
+3. Open **Shift Summary Report** → verify previous shift data is complete
 
----
+### Creating a Job Card
+1. Masters → **Die Master** → confirm die condition and shot count
+2. Masters → **Billet Receipt** → confirm batch has sufficient weight
+3. Daily Ops → **Extrusion Job Card** → New
+4. Fill: die_number, billet_batch, shift_date, shift, press
+5. After extrusion: enter billet_weight_used_kg + net_output_kg → yield auto-calculates
+6. If yield < 80%: alert fires → investigate before saving
 
-## 9. Important Item Codes
+### Recording Press Strokes
+1. Daily Ops → **Press Log** → New
+2. Link to Job Card, set log_time and stroke_no
+3. Fill ram_pressure_tons, ram_speed_mmps, container_temp_c, die_temp_c
+4. If defect: check defect_observed → select defect_type → add notes
 
-| Item Code | Description | UOM |
-|-----------|-------------|-----|
-| ALU-BILLET-6063 | Aluminium Billet 6063 | Kg |
-| ALU-BILLET-6061 | Aluminium Billet 6061 | Kg |
-| ALU-PROFILE-T-6063 | T-Section Profile 6063 | Kg |
-| ALU-PROFILE-SQ-6063 | Square Hollow Profile | Kg |
-| ALU-PROFILE-RECT-6063 | Rectangle Profile | Kg |
-| ALU-SCRAP | Aluminium Scrap | Kg |
+### Recording Furnace Cycle
+1. Daily Ops → **Furnace Log** → New
+2. Link to Job Card, set furnace_no, target_temp_c
+3. Add zone temperature readings in the Temp Readings child table
+4. Record actual_temp_achieved_c, heat_up_time_mins, soak_time_mins
 
----
+### Recording Aging Cycle
+1. Daily Ops → **Aging Oven Log** → New
+2. Set temper_target (T5/T6/T66), set_temp_c, soak_hours
+3. After cycle: enter final_hardness_hv, set result (Pass/Fail/Re-age)
 
-## 10. Warehouses
+### Closing a Shift
+1. Daily Ops → **Production Shift Report** → New
+2. Fill shift_date, shift, planned_production_kg, actual_production_kg
+3. Efficiency% and Shift Yield% auto-calculate
+4. Add Job Cards in the table, fill downtime, die changes, strokes
+5. Check safety_incidents if any incident occurred (Safety Details become mandatory)
+6. Next Shift Handover Notes → fill for the incoming team
 
-| Warehouse | Use |
-|-----------|-----|
-| Billet Store - A | Incoming billets storage |
-| Die Store - A | Die storage |
-| WIP - Press Floor - A | Material at press |
-| WIP - Heat Treatment Room - A | Aging oven area |
-| WIP - Surface Finishing Area - A | Coating area |
-| Finished Goods Warehouse - A | Ready stock |
-| Scrap Yard - A | Collected scrap |
-| Rejection Store - A | Rejected material |
+### Die Maintenance Workflow
+1. Masters → **Die Maintenance Log** → New
+2. Select die (from Die Master), set maintenance_type
+3. Fill before_condition, after_condition
+4. For nitriding: check nitriding_done, set nitriding_cycles
+5. Enter cost → used for total maintenance cost tracking
 
----
-
-## 11. Trouble-Shooting
-
-**Site not loading?**
-```bash
-# Check if web server is running
-ss -tlnp | grep 8000
-# If not, restart:
-cd ~/frappe-bench && nohup bench serve --port 8000 > logs/web.log 2>&1 &
-```
-
-**Redis connection error?**
-```bash
-redis-cli -p 13000 ping  # Should return PONG
-redis-cli -p 11000 ping  # Should return PONG
-# If not:
-redis-server ~/frappe-bench/config/redis_cache.conf --daemonize yes
-redis-server ~/frappe-bench/config/redis_queue.conf --daemonize yes
-```
-
-**Clear cache if pages look wrong:**
-```bash
-cd ~/frappe-bench
-bench --site kali.local clear-cache
-bench --site kali.local clear-website-cache
-```
+### QC Sign-Off
+1. Tracking → **Quality Check** → New
+2. Link to Job Card, fill dimensional/surface/mechanical/visual check results
+3. Overall Result auto-sets to Pass/Fail/Conditional
+4. Enter inspector_name and sign off
 
 ---
 
-*Generated for Aluminium Extrusion Manufacturing ERP on ERPNext v16*  
-*GitHub: https://github.com/jajulasandeep583/kali.git*
+## GitHub Repository
+
+- **Repo:** https://github.com/jajulasandeep583/kali.git
+- **Branch:** main
+- **Install:** `bench get-app https://github.com/jajulasandeep583/kali.git && bench --site <site> install-app kali`
+
+## Tech Stack
+- ERPNext v16 + Frappe Framework v16
+- Python 3.14 (pyenv) on Ubuntu (WSL2)
+- MariaDB InnoDB, Redis, Gunicorn
+- Frappe Charts (built-in), Bootstrap 5 CSS
+
+---
+
+*Last updated: 2025-05-02 | kali app v2.0 — Phase A-H complete*
