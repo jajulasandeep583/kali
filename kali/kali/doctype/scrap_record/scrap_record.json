@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:scrap_no",
+ "creation": "2025-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "scrap_no",
+  "scrap_date",
+  "job_card",
+  "scrap_type",
+  "alloy_grade",
+  "weight_kg",
+  "disposed",
+  "disposal_date",
+  "recovery_amount",
+  "remarks"
+ ],
+ "fields": [
+  {"fieldname": "scrap_no", "fieldtype": "Data", "in_list_view": 1, "label": "Scrap No", "reqd": 1},
+  {"fieldname": "scrap_date", "fieldtype": "Date", "in_list_view": 1, "label": "Scrap Date"},
+  {"fieldname": "job_card", "fieldtype": "Link", "label": "Job Card", "options": "Extrusion Job Card"},
+  {"fieldname": "scrap_type", "fieldtype": "Select", "in_list_view": 1, "label": "Scrap Type", "options": "Butt End\nFront Cut\nRejection\nSurface Defect\nOther"},
+  {"fieldname": "alloy_grade", "fieldtype": "Select", "label": "Alloy Grade", "options": "6063\n6061"},
+  {"fieldname": "weight_kg", "fieldtype": "Float", "label": "Weight (Kg)"},
+  {"fieldname": "disposed", "fieldtype": "Check", "label": "Disposed"},
+  {"fieldname": "disposal_date", "fieldtype": "Date", "label": "Disposal Date"},
+  {"fieldname": "recovery_amount", "fieldtype": "Currency", "label": "Recovery Amount"},
+  {"fieldname": "remarks", "fieldtype": "Text", "label": "Remarks"}
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Scrap Record",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+  {"create": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Manufacturing User", "share": 1, "write": 1}
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

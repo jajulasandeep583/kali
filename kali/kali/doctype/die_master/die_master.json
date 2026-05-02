@@ -1,0 +1,187 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:die_number",
+ "creation": "2025-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "die_number",
+  "die_name",
+  "profile_code",
+  "die_shape",
+  "alloy_grade",
+  "tongue_ratio",
+  "circle_size_mm",
+  "profile_weight_per_meter_kg",
+  "die_weight_kg",
+  "die_material",
+  "manufacturer",
+  "manufacture_date",
+  "die_cost",
+  "max_shots_allowed",
+  "total_shots_used",
+  "last_used_date",
+  "last_maintenance_date",
+  "die_status",
+  "customer_linked",
+  "drawing_reference",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "die_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Die Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "die_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Die Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "profile_code",
+   "fieldtype": "Data",
+   "label": "Profile Code"
+  },
+  {
+   "fieldname": "die_shape",
+   "fieldtype": "Select",
+   "label": "Die Shape",
+   "options": "T-Section\nSquare Hollow\nRectangle Hollow\nRound\nAngle\nCustom"
+  },
+  {
+   "fieldname": "alloy_grade",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Alloy Grade",
+   "options": "6063\n6061\n6082"
+  },
+  {
+   "fieldname": "tongue_ratio",
+   "fieldtype": "Float",
+   "label": "Tongue Ratio"
+  },
+  {
+   "fieldname": "circle_size_mm",
+   "fieldtype": "Float",
+   "label": "Circle Size (mm)"
+  },
+  {
+   "fieldname": "profile_weight_per_meter_kg",
+   "fieldtype": "Float",
+   "label": "Profile Weight Per Meter (Kg)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "die_weight_kg",
+   "fieldtype": "Float",
+   "label": "Die Weight (Kg)"
+  },
+  {
+   "fieldname": "die_material",
+   "fieldtype": "Data",
+   "label": "Die Material"
+  },
+  {
+   "fieldname": "manufacturer",
+   "fieldtype": "Data",
+   "label": "Manufacturer"
+  },
+  {
+   "fieldname": "manufacture_date",
+   "fieldtype": "Date",
+   "label": "Manufacture Date"
+  },
+  {
+   "fieldname": "die_cost",
+   "fieldtype": "Currency",
+   "label": "Die Cost"
+  },
+  {
+   "fieldname": "max_shots_allowed",
+   "fieldtype": "Int",
+   "label": "Max Shots Allowed"
+  },
+  {
+   "fieldname": "total_shots_used",
+   "fieldtype": "Int",
+   "label": "Total Shots Used"
+  },
+  {
+   "fieldname": "last_used_date",
+   "fieldtype": "Date",
+   "label": "Last Used Date"
+  },
+  {
+   "fieldname": "last_maintenance_date",
+   "fieldtype": "Date",
+   "label": "Last Maintenance Date"
+  },
+  {
+   "fieldname": "die_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Die Status",
+   "options": "New\nActive\nUnder Repair\nCondemned\nIn Press"
+  },
+  {
+   "fieldname": "customer_linked",
+   "fieldtype": "Link",
+   "label": "Customer Linked",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "drawing_reference",
+   "fieldtype": "Data",
+   "label": "Drawing Reference"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Die Master",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

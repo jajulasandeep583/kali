@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:batch_no",
+ "creation": "2025-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "batch_no",
+  "receipt_date",
+  "supplier",
+  "alloy_grade",
+  "billet_diameter_mm",
+  "no_of_billets",
+  "total_weight_kg",
+  "heat_number",
+  "certificate_no",
+  "chemical_si",
+  "chemical_mg",
+  "chemical_fe",
+  "status",
+  "quality_approved",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Batch No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "receipt_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Receipt Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "alloy_grade",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Alloy Grade",
+   "options": "6063\n6061\n6082"
+  },
+  {
+   "fieldname": "billet_diameter_mm",
+   "fieldtype": "Select",
+   "label": "Billet Diameter (mm)",
+   "options": "146mm\n178mm\n203mm\n254mm"
+  },
+  {
+   "fieldname": "no_of_billets",
+   "fieldtype": "Int",
+   "label": "No of Billets"
+  },
+  {
+   "fieldname": "total_weight_kg",
+   "fieldtype": "Float",
+   "label": "Total Weight (Kg)"
+  },
+  {
+   "fieldname": "heat_number",
+   "fieldtype": "Data",
+   "label": "Heat Number"
+  },
+  {
+   "fieldname": "certificate_no",
+   "fieldtype": "Data",
+   "label": "Certificate No"
+  },
+  {
+   "fieldname": "chemical_si",
+   "fieldtype": "Float",
+   "label": "Chemical Si %"
+  },
+  {
+   "fieldname": "chemical_mg",
+   "fieldtype": "Float",
+   "label": "Chemical Mg %"
+  },
+  {
+   "fieldname": "chemical_fe",
+   "fieldtype": "Float",
+   "label": "Chemical Fe %"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Available\nPartially Used\nConsumed"
+  },
+  {
+   "fieldname": "quality_approved",
+   "fieldtype": "Check",
+   "label": "Quality Approved"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Billet Receipt",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
