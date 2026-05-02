@@ -9,13 +9,15 @@ def get_kpis():
 	thirty_ago = today - timedelta(days=30)
 
 	def q(sql, *args):
-		return frappe.db.sql(sql, args or None)[0][0] or 0
+		if args:
+			return frappe.db.sql(sql, args, as_dict=False)[0][0] or 0
+		return frappe.db.sql(sql, as_dict=False)[0][0] or 0
 
 	today_output  = q("SELECT COALESCE(SUM(net_output_kg),0) FROM `tabExtrusion Job Card` WHERE shift_date=%s AND docstatus<2", today)
 	week_output   = q("SELECT COALESCE(SUM(net_output_kg),0) FROM `tabExtrusion Job Card` WHERE shift_date>=%s AND docstatus<2", week_start)
 	month_output  = q("SELECT COALESCE(SUM(net_output_kg),0) FROM `tabExtrusion Job Card` WHERE shift_date>=%s AND docstatus<2", month_start)
 	avg_yield_30d = q("SELECT COALESCE(AVG(yield_percentage),0) FROM `tabExtrusion Job Card` WHERE shift_date>=%s AND docstatus<2 AND yield_percentage>0", thirty_ago)
-	dies_critical = q("SELECT COUNT(*) FROM `tabDie Master` WHERE total_shots_used>=max_shots_allowed*0.9 AND die_status='Active' AND docstatus<2")
+	dies_critical = q("SELECT COUNT(*) FROM `tabDie Master` WHERE total_shots_used >= (max_shots_allowed * 90 / 100) AND die_status='Active' AND docstatus<2")
 
 	active_orders = q("SELECT COUNT(*) FROM `tabSales Order` WHERE status NOT IN ('Completed','Cancelled') AND docstatus=1")
 	in_production = q("SELECT COUNT(*) FROM `tabExtrusion Job Card` WHERE status NOT IN ('Completed','On Hold','Pending') AND docstatus<2")
@@ -110,7 +112,7 @@ def get_die_alerts():
 		SELECT die_number, die_name, total_shots_used, max_shots_allowed,
 			ROUND(total_shots_used/NULLIF(max_shots_allowed,0)*100,1) as pct
 		FROM `tabDie Master`
-		WHERE total_shots_used >= max_shots_allowed*0.75
+		WHERE total_shots_used >= (max_shots_allowed * 75 / 100)
 		AND die_status='Active' AND docstatus<2
 		ORDER BY pct DESC LIMIT 8
 	""", as_dict=1)
