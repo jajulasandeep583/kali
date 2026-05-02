@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:log_no",
+ "creation": "2025-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "log_no", "fieldtype": "Data", "in_list_view": 1, "label": "Log No", "reqd": 1},
+  {"fieldname": "oven_no", "fieldtype": "Data", "in_list_view": 1, "label": "Oven No"},
+  {"fieldname": "job_card", "fieldtype": "Link", "label": "Job Card", "options": "Extrusion Job Card"},
+  {"fieldname": "batch_ref", "fieldtype": "Data", "label": "Batch Ref"},
+  {"fieldname": "load_date", "fieldtype": "Date", "in_list_view": 1, "label": "Load Date"},
+  {"fieldname": "profiles_loaded_kg", "fieldtype": "Float", "label": "Profiles Loaded (Kg)"},
+  {"fieldname": "no_bundles", "fieldtype": "Int", "label": "No Bundles"},
+  {"fieldname": "temper_target", "fieldtype": "Select", "label": "Temper Target", "options": "T5\nT6\nT66"},
+  {"fieldname": "set_temp_c", "fieldtype": "Float", "label": "Set Temp (°C)"},
+  {"fieldname": "soak_hours", "fieldtype": "Float", "label": "Soak Hours"},
+  {"fieldname": "actual_start", "fieldtype": "Datetime", "label": "Actual Start"},
+  {"fieldname": "actual_end", "fieldtype": "Datetime", "label": "Actual End"},
+  {"fieldname": "temp_log", "fieldtype": "Table", "label": "Temperature Log", "options": "Aging Temp Reading"},
+  {"fieldname": "final_hardness_hv", "fieldtype": "Float", "label": "Final Hardness (HV)"},
+  {"fieldname": "result", "fieldtype": "Select", "in_list_view": 1, "label": "Result", "options": "\nPass\nFail\nRe-age"},
+  {"fieldname": "energy_kwh", "fieldtype": "Float", "label": "Energy (kWh)"},
+  {"fieldname": "operator", "fieldtype": "Data", "label": "Operator"}
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Aging Oven Log",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+  {"create": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Manufacturing User", "share": 1, "write": 1}
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

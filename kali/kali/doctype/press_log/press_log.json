@@ -1,0 +1,40 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:log_no",
+ "creation": "2025-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "log_no", "fieldtype": "Data", "in_list_view": 1, "label": "Log No", "reqd": 1},
+  {"fieldname": "job_card", "fieldtype": "Link", "in_list_view": 1, "label": "Job Card", "options": "Extrusion Job Card"},
+  {"fieldname": "log_time", "fieldtype": "Datetime", "in_list_view": 1, "label": "Log Time", "reqd": 1},
+  {"fieldname": "stroke_no", "fieldtype": "Int", "label": "Stroke No"},
+  {"fieldname": "ram_pressure_tons", "fieldtype": "Float", "label": "Ram Pressure (Tons)"},
+  {"fieldname": "ram_speed_mmps", "fieldtype": "Float", "label": "Ram Speed (mm/s)"},
+  {"fieldname": "container_temp_c", "fieldtype": "Float", "label": "Container Temp (°C)"},
+  {"fieldname": "die_temp_c", "fieldtype": "Float", "label": "Die Temp (°C)"},
+  {"fieldname": "profile_exit_temp_c", "fieldtype": "Float", "label": "Profile Exit Temp (°C)"},
+  {"fieldname": "output_length_this_stroke_mm", "fieldtype": "Float", "label": "Output Length This Stroke (mm)"},
+  {"fieldname": "defect_observed", "fieldtype": "Check", "label": "Defect Observed"},
+  {"fieldname": "defect_type", "fieldtype": "Select", "label": "Defect Type", "options": "None\nSurface Crack\nBlistering\nDie Line\nRough Surface\nDimensional\nSpeed Mark"},
+  {"fieldname": "action_taken", "fieldtype": "Data", "label": "Action Taken"},
+  {"fieldname": "logged_by", "fieldtype": "Data", "label": "Logged By"}
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Press Log",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+  {"create": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Manufacturing User", "share": 1, "write": 1}
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

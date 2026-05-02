@@ -1,0 +1,17 @@
+{
+ "creation": "2025-01-01 00:00:00",
+ "doctype": "Page",
+ "icon": "fa fa-columns",
+ "modified": "2025-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "alum-kanban",
+ "owner": "Administrator",
+ "page_name": "alum-kanban",
+ "roles": [
+  {"role": "Manufacturing User"},
+  {"role": "System Manager"}
+ ],
+ "system_page": 0,
+ "title": "Job Card Kanban"
+}

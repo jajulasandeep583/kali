@@ -1,0 +1,38 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:log_no",
+ "creation": "2025-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "log_no", "fieldtype": "Data", "in_list_view": 1, "label": "Log No", "reqd": 1},
+  {"fieldname": "cut_date", "fieldtype": "Date", "in_list_view": 1, "label": "Cut Date"},
+  {"fieldname": "billet_batch", "fieldtype": "Link", "label": "Billet Batch", "options": "Billet Receipt"},
+  {"fieldname": "job_card", "fieldtype": "Link", "label": "Job Card", "options": "Extrusion Job Card"},
+  {"fieldname": "original_billet_length_mm", "fieldtype": "Float", "label": "Original Billet Length (mm)"},
+  {"fieldname": "cut_length_mm", "fieldtype": "Float", "label": "Cut Length (mm)"},
+  {"fieldname": "no_pieces_cut", "fieldtype": "Int", "label": "No Pieces Cut"},
+  {"fieldname": "total_weight_cut_kg", "fieldtype": "Float", "label": "Total Weight Cut (Kg)"},
+  {"fieldname": "saw_no", "fieldtype": "Data", "label": "Saw No"},
+  {"fieldname": "operator", "fieldtype": "Data", "label": "Operator"},
+  {"fieldname": "butt_end_weight_kg", "fieldtype": "Float", "label": "Butt End Weight (Kg)"},
+  {"fieldname": "scrap_from_cutting_kg", "fieldtype": "Float", "label": "Scrap from Cutting (Kg)"}
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Billet Cutting Log",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+  {"create": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Manufacturing User", "share": 1, "write": 1}
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

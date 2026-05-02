@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:log_no",
+ "creation": "2025-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {"fieldname": "log_no", "fieldtype": "Data", "in_list_view": 1, "label": "Log No", "reqd": 1},
+  {"fieldname": "die", "fieldtype": "Link", "in_list_view": 1, "label": "Die", "options": "Die Master"},
+  {"fieldname": "maintenance_date", "fieldtype": "Date", "in_list_view": 1, "label": "Maintenance Date"},
+  {"fieldname": "maintenance_type", "fieldtype": "Select", "in_list_view": 1, "label": "Maintenance Type", "options": "Routine Cleaning\nNitriding\nPolishing\nRepair\nModification\nInspection\nCondemned"},
+  {"fieldname": "shots_at_maintenance", "fieldtype": "Int", "label": "Shots at Maintenance"},
+  {"fieldname": "maintenance_by", "fieldtype": "Data", "label": "Maintenance By"},
+  {"fieldname": "vendor", "fieldtype": "Link", "label": "Vendor", "options": "Supplier"},
+  {"fieldname": "cost", "fieldtype": "Currency", "label": "Cost"},
+  {"fieldname": "before_condition", "fieldtype": "Select", "label": "Before Condition", "options": "\nGood\nFair\nPoor\nDamaged"},
+  {"fieldname": "after_condition", "fieldtype": "Select", "label": "After Condition", "options": "\nGood\nFair\nPoor\nScrapped"},
+  {"fieldname": "next_maintenance_due_shots", "fieldtype": "Int", "label": "Next Maintenance Due (Shots)"},
+  {"fieldname": "nitriding_done", "fieldtype": "Check", "label": "Nitriding Done"},
+  {"fieldname": "nitriding_cycles", "fieldtype": "Int", "label": "Nitriding Cycles"},
+  {"fieldname": "die_dimensions_ok", "fieldtype": "Check", "label": "Die Dimensions OK"},
+  {"fieldname": "remarks", "fieldtype": "Text", "label": "Remarks"},
+  {"fieldname": "approved_by", "fieldtype": "Data", "label": "Approved By"}
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Die Maintenance Log",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+  {"create": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Manufacturing User", "share": 1, "write": 1}
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
