@@ -1,0 +1,127 @@
+/* ── Kali App Custom Styles ──────────────────────────────────── */
+
+/* Sidebar active page highlight */
+.standard-sidebar-item.selected,
+.standard-sidebar-item:has(.selected) {
+    background: linear-gradient(90deg, #e3f2fd, #f8f9fa) !important;
+    border-left: 3px solid #17a2b8 !important;
+    border-radius: 0 8px 8px 0 !important;
+}
+.standard-sidebar-item.selected a,
+.standard-sidebar-item.selected span {
+    color: #17a2b8 !important;
+    font-weight: 700 !important;
+}
+
+/* Workspace shortcut hover effect */
+.widget.shortcut-widget-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,.12) !important;
+    transition: all .2s ease !important;
+}
+
+/* List view — Extrusion Job Card status row colors */
+[data-doctype="Extrusion Job Card"] .list-row[data-status="Completed"] {
+    border-left: 3px solid #28a745 !important;
+    background: #f8fff9 !important;
+}
+[data-doctype="Extrusion Job Card"] .list-row[data-status="Extrusion Running"],
+[data-doctype="Extrusion Job Card"] .list-row[data-status="In Progress"] {
+    border-left: 3px solid #17a2b8 !important;
+    background: #f0fbff !important;
+}
+[data-doctype="Extrusion Job Card"] .list-row[data-status="On Hold"],
+[data-doctype="Extrusion Job Card"] .list-row[data-status="Quality Hold"] {
+    border-left: 3px solid #dc3545 !important;
+    background: #fff8f8 !important;
+}
+[data-doctype="Extrusion Job Card"] .list-row[data-status="Pending"] {
+    border-left: 3px solid #6c757d !important;
+}
+[data-doctype="Extrusion Job Card"] .list-row[data-status="Aging"],
+[data-doctype="Extrusion Job Card"] .list-row[data-status="Stretching"] {
+    border-left: 3px solid #795548 !important;
+    background: #fdf8f5 !important;
+}
+[data-doctype="Extrusion Job Card"] .list-row[data-status="Heating"],
+[data-doctype="Extrusion Job Card"] .list-row[data-status="Billet Loaded"] {
+    border-left: 3px solid #fd7e14 !important;
+    background: #fffaf5 !important;
+}
+
+/* Quality Check list colors */
+[data-doctype="Quality Check"] .list-row[data-overall_result="Pass"] {
+    border-left: 3px solid #28a745 !important;
+    background: #f8fff9 !important;
+}
+[data-doctype="Quality Check"] .list-row[data-overall_result="Fail"] {
+    border-left: 3px solid #dc3545 !important;
+    background: #fff8f8 !important;
+}
+[data-doctype="Quality Check"] .list-row[data-overall_result="Hold"],
+[data-doctype="Quality Check"] .list-row[data-overall_result="Conditional"] {
+    border-left: 3px solid #ffc107 !important;
+    background: #fffdf0 !important;
+}
+
+/* Die Master list — visual shot life indicator */
+[data-doctype="Die Master"] .list-row {
+    position: relative;
+}
+[data-doctype="Die Master"] .list-row[data-die_status="Condemned"] {
+    border-left: 3px solid #dc3545 !important;
+    background: #fff0f0 !important;
+    opacity: 0.8;
+}
+[data-doctype="Die Master"] .list-row[data-die_status="Under Maintenance"] {
+    border-left: 3px solid #ffc107 !important;
+    background: #fffdf0 !important;
+}
+[data-doctype="Die Master"] .list-row[data-die_status="Active"] {
+    border-left: 3px solid #28a745 !important;
+}
+
+/* Sales Order list colors by status */
+[data-doctype="Sales Order"] .list-row[data-status="Completed"] {
+    border-left: 3px solid #28a745 !important;
+}
+[data-doctype="Sales Order"] .list-row[data-status="To Deliver and Bill"],
+[data-doctype="Sales Order"] .list-row[data-status="To Deliver"] {
+    border-left: 3px solid #17a2b8 !important;
+}
+[data-doctype="Sales Order"] .list-row[data-status="On Hold"] {
+    border-left: 3px solid #dc3545 !important;
+}
+
+/* Form section headers — styled */
+.section-head {
+    background: linear-gradient(90deg, #17a2b8, #0d6efd) !important;
+    color: #fff !important;
+    padding: 6px 12px !important;
+    border-radius: 6px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 8px !important;
+}
+
+/* Dashboard page global tweaks */
+.layout-main-section {
+    padding: 12px !important;
+}
+
+/* Yield badge helper class */
+.yield-good  { background: #28a745; color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; }
+.yield-avg   { background: #ffc107; color: #000; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; }
+.yield-poor  { background: #dc3545; color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; }
+
+/* Workspace header section dividers */
+.widget-group .widget-group-head .widget-group-title {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #444 !important;
+    border-bottom: 2px solid #e9ecef !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 10px !important;
+}
