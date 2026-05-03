@@ -1,9 +1,9 @@
 [project]
 name = "kali"
 authors = [
-    { name = "Sandeep", email = "aimidhunatech@gmail.com"}
+    { name = "jajulasandeep583", email = "jajulasandeep583@gmail.com"}
 ]
-description = "Kali Custom App"
+description = "Aluminium Extrusion Manufacturing ERP"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

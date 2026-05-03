@@ -1,0 +1,2 @@
+include *.txt *.md *.json *.toml
+recursive-include kali *.js *.css *.html *.json *.csv *.png *.jpg *.jpeg *.svg *.ico *.py

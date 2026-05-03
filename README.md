@@ -1,33 +1,66 @@
-### Kali
+﻿# Kali - Aluminium Extrusion Manufacturing ERP
 
-Kali Custom App
+A custom Frappe/ERPNext app for managing aluminium extrusion manufacturing operations — from billet receipt to dispatch.
 
-### Installation
+## Features
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+- **17 Custom DocTypes** covering the full production cycle
+- **Production Tracking** — Extrusion Job Cards, Press Logs, Billet Receipts, Billet Cutting Logs
+- **Quality Control** — Quality Checks with pass/fail results, Customer Drawings
+- **Die Management** — Die Master, Die Maintenance Logs, Die Health Dashboard
+- **Furnace & Aging** — Furnace Logs with temperature readings, Aging Oven Logs
+- **Surface Treatment** — Surface Treatment Orders
+- **Shift Reporting** — Production Shift Reports, Shift Job Card Details
+- **Scrap Management** — Scrap Records
+- **4 Custom Dashboards** — Plant Home, Aluminium Dashboard, Kanban Board, Die Room Dashboard
+- **9 Reports** — Daily Production Summary, Press Efficiency, Scrap Analysis, Order-to-Dispatch Tracker, and more
+- **Workspace** — Dedicated Aluminium Manufacturing workspace with shortcuts
+
+## Installation
+
+### On a self-hosted bench
 
 ```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app kali
+cd /path/to/frappe-bench
+bench get-app https://github.com/jajulasandeep583/kali.git
+bench --site your-site.local install-app kali
+bench --site your-site.local migrate
 ```
 
-### Contributing
+### On Frappe Cloud
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+1. Go to your Frappe Cloud dashboard
+2. Add this app via **Apps > Add App**
+3. Use the repository URL: `https://github.com/jajulasandeep583/kali.git`
+4. Install the app on your site
 
-```bash
-cd apps/kali
-pre-commit install
-```
+## Requirements
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+- Frappe Framework v16+
+- ERPNext v16+ (recommended for Sales Order integration)
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
+## Custom DocTypes
 
-### License
+| DocType | Description |
+|---------|-------------|
+| Extrusion Job Card | Main production job tracking |
+| Billet Receipt | Raw material intake |
+| Billet Cutting Log | Billet cutting operations |
+| Press Log | Extrusion press run data |
+| Furnace Log | Furnace operation records |
+| Furnace Temp Reading | Temperature readings (child table) |
+| Aging Oven Log | Aging oven operation records |
+| Aging Temp Reading | Aging temperature readings (child table) |
+| Die Master | Die inventory and specifications |
+| Die Maintenance Log | Die repair and maintenance |
+| Quality Check | QC results per job |
+| Customer Drawing | Customer-supplied drawings |
+| Surface Treatment Order | Anodising/powder coating orders |
+| Production Shift Report | Shift-level production summary |
+| Shift Job Card Detail | Job details per shift (child table) |
+| Scrap Record | Scrap material tracking |
+| Test Employee | Test/demo doctype |
 
-mit
+## License
+
+MIT — see [license.txt](license.txt)

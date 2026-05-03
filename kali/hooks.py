@@ -1,9 +1,9 @@
 app_name = "kali"
 app_title = "Kali"
-app_publisher = "Sandeep"
-app_description = "Kali Custom App"
+app_publisher = "jajulasandeep583"
+app_description = "Aluminium Extrusion Manufacturing ERP"
 app_email = "aimidhunatech@gmail.com"
-app_license = "mit"
+app_license = "MIT"
 
 # Apps
 # ------------------
