@@ -293,3 +293,47 @@ Each stage shows the live count of jobs at that stage. Green = normal, Orange = 
 ---
 
 *Last updated: 2026-05-02 | kali app v3.0 — Plant Home Dashboard added*
+
+## 🚀 Extrusion Job Card Enhancements
+
+### ✅ Features Implemented
+- Scrap Weight Auto Calculation
+- Scrap Percentage
+- Recovery Percentage
+- Validation for incorrect production entries
+
+### 📊 Business Logic
+- Scrap Weight = Billet Weight - Net Output
+- Scrap % = (Scrap / Billet) × 100
+- Recovery % = (Output / Billet) × 100
+
+### ⚠️ Validation
+- System prevents saving if:
+  - Net Output > Billet Weight
+
+### 🧪 Example
+
+| Billet | Output | Scrap | Recovery |
+|--------|--------|-------|----------|
+| 1000   | 850    | 150   | 85%      |
+
+### 🛠 Setup
+
+Run after pulling latest changes:
+
+```bash
+bench migrate
+bench restart
+```
+
+### 📌 Usage Steps
+
+1. Go to Extrusion Job Card
+2. Enter:
+   - Billet Weight
+   - Net Output
+3. System auto-calculates:
+   - Scrap
+   - Scrap %
+   - Recovery %
+4. Save the document
