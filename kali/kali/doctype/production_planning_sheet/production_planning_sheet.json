@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:plan_no",
+ "creation": "2026-05-10 18:17:27.558980",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "plan_no",
+  "plan_date",
+  "customer_req",
+  "customer",
+  "sales_order",
+  "die",
+  "press",
+  "press_size_inch",
+  "alloy_grade",
+  "profile_tons_planned",
+  "log_batch",
+  "logs_allocated_nos",
+  "logs_weight_allocated_kg",
+  "billet_cut_length_mm",
+  "billets_needed",
+  "single_billet_weight_kg",
+  "total_billet_weight_needed_kg",
+  "planned_date",
+  "status",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "plan_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Plan No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "plan_date",
+   "fieldtype": "Date",
+   "label": "Plan Date"
+  },
+  {
+   "fieldname": "customer_req",
+   "fieldtype": "Link",
+   "label": "Customer Requirement",
+   "options": "Customer Requirement Sheet"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "fieldname": "die",
+   "fieldtype": "Link",
+   "label": "Die",
+   "options": "Die Master"
+  },
+  {
+   "fieldname": "press",
+   "fieldtype": "Link",
+   "label": "Press",
+   "options": "Workstation"
+  },
+  {
+   "fieldname": "press_size_inch",
+   "fieldtype": "Select",
+   "label": "Press Size (inch)",
+   "options": "6 inch\n7 inch\n8 inch\n9 inch\n10 inch"
+  },
+  {
+   "fieldname": "alloy_grade",
+   "fieldtype": "Select",
+   "label": "Alloy Grade",
+   "options": "6063\n6061\n6082"
+  },
+  {
+   "fieldname": "profile_tons_planned",
+   "fieldtype": "Float",
+   "label": "Profile Tons Planned"
+  },
+  {
+   "fieldname": "log_batch",
+   "fieldtype": "Link",
+   "label": "Log Batch",
+   "options": "Log Master"
+  },
+  {
+   "fieldname": "logs_allocated_nos",
+   "fieldtype": "Int",
+   "label": "Logs Allocated (Nos)"
+  },
+  {
+   "fieldname": "logs_weight_allocated_kg",
+   "fieldtype": "Float",
+   "label": "Logs Weight Allocated (kg)"
+  },
+  {
+   "fieldname": "billet_cut_length_mm",
+   "fieldtype": "Float",
+   "label": "Billet Cut Length (mm)"
+  },
+  {
+   "fieldname": "billets_needed",
+   "fieldtype": "Int",
+   "label": "Billets Needed"
+  },
+  {
+   "fieldname": "single_billet_weight_kg",
+   "fieldtype": "Float",
+   "label": "Single Billet Weight (kg)"
+  },
+  {
+   "fieldname": "total_billet_weight_needed_kg",
+   "fieldtype": "Float",
+   "label": "Total Billet Weight Needed (kg)"
+  },
+  {
+   "fieldname": "planned_date",
+   "fieldtype": "Date",
+   "label": "Planned Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nApproved\nIn Progress\nCompleted"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-10 18:20:23.321682",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Production Planning Sheet",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

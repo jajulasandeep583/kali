@@ -1,0 +1,162 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:log_batch_no",
+ "creation": "2026-05-10 18:17:25.643486",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "log_batch_no",
+  "receipt_date",
+  "supplier",
+  "alloy_grade",
+  "log_diameter_inch",
+  "log_length_mm",
+  "no_of_logs",
+  "single_log_weight_kg",
+  "total_weight_kg",
+  "heat_number",
+  "homogenized",
+  "homogenizing_temp_c",
+  "homogenizing_hours",
+  "homogenizing_date",
+  "chemical_si",
+  "chemical_mg",
+  "chemical_fe",
+  "hardness_bhn",
+  "quality_status",
+  "status",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "log_batch_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Log Batch No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "receipt_date",
+   "fieldtype": "Date",
+   "label": "Receipt Date"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "alloy_grade",
+   "fieldtype": "Select",
+   "label": "Alloy Grade",
+   "options": "6063\n6061\n6082\n6005"
+  },
+  {
+   "fieldname": "log_diameter_inch",
+   "fieldtype": "Select",
+   "label": "Log Diameter (inch)",
+   "options": "6 inch\n7 inch\n8 inch\n9 inch\n10 inch"
+  },
+  {
+   "fieldname": "log_length_mm",
+   "fieldtype": "Float",
+   "label": "Log Length (mm)"
+  },
+  {
+   "fieldname": "no_of_logs",
+   "fieldtype": "Int",
+   "label": "No of Logs"
+  },
+  {
+   "fieldname": "single_log_weight_kg",
+   "fieldtype": "Float",
+   "label": "Single Log Weight (kg)"
+  },
+  {
+   "fieldname": "total_weight_kg",
+   "fieldtype": "Float",
+   "label": "Total Weight (kg)"
+  },
+  {
+   "fieldname": "heat_number",
+   "fieldtype": "Data",
+   "label": "Heat Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "homogenized",
+   "fieldtype": "Check",
+   "label": "Homogenized"
+  },
+  {
+   "fieldname": "homogenizing_temp_c",
+   "fieldtype": "Float",
+   "label": "Homogenizing Temp (C)"
+  },
+  {
+   "fieldname": "homogenizing_hours",
+   "fieldtype": "Float",
+   "label": "Homogenizing Hours"
+  },
+  {
+   "fieldname": "homogenizing_date",
+   "fieldtype": "Date",
+   "label": "Homogenizing Date"
+  },
+  {
+   "fieldname": "chemical_si",
+   "fieldtype": "Float",
+   "label": "Chemical Si"
+  },
+  {
+   "fieldname": "chemical_mg",
+   "fieldtype": "Float",
+   "label": "Chemical Mg"
+  },
+  {
+   "fieldname": "chemical_fe",
+   "fieldtype": "Float",
+   "label": "Chemical Fe"
+  },
+  {
+   "fieldname": "hardness_bhn",
+   "fieldtype": "Float",
+   "label": "Hardness (BHN)"
+  },
+  {
+   "fieldname": "quality_status",
+   "fieldtype": "Select",
+   "label": "Quality Status",
+   "options": "Approved\nRejected\nPending"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available\nPartially Used\nConsumed\nRejected"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-10 18:20:21.663545",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Log Master",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

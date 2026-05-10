@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:conversion_no",
+ "creation": "2026-05-10 18:17:27.010561",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "conversion_no",
+  "conversion_date",
+  "shift",
+  "log_batch",
+  "alloy_grade",
+  "log_diameter_inch",
+  "press_size_inch",
+  "log_original_length_mm",
+  "billet_cut_length_mm",
+  "no_of_logs_used",
+  "no_of_billets_produced",
+  "single_billet_weight_kg",
+  "total_billet_weight_kg",
+  "butt_end_loss_kg",
+  "saw_cut_loss_kg",
+  "total_cutting_scrap_kg",
+  "cutting_yield_percentage",
+  "operator",
+  "linked_job_card",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "conversion_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Conversion No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "conversion_date",
+   "fieldtype": "Date",
+   "label": "Conversion Date"
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Select",
+   "label": "Shift",
+   "options": "Morning\nEvening\nNight"
+  },
+  {
+   "fieldname": "log_batch",
+   "fieldtype": "Link",
+   "label": "Log Batch",
+   "options": "Log Master"
+  },
+  {
+   "fieldname": "alloy_grade",
+   "fieldtype": "Data",
+   "label": "Alloy Grade"
+  },
+  {
+   "fieldname": "log_diameter_inch",
+   "fieldtype": "Data",
+   "label": "Log Diameter (inch)"
+  },
+  {
+   "fieldname": "press_size_inch",
+   "fieldtype": "Select",
+   "label": "Press Size (inch)",
+   "options": "6 inch\n7 inch\n8 inch\n9 inch\n10 inch"
+  },
+  {
+   "fieldname": "log_original_length_mm",
+   "fieldtype": "Float",
+   "label": "Log Original Length (mm)"
+  },
+  {
+   "fieldname": "billet_cut_length_mm",
+   "fieldtype": "Float",
+   "label": "Billet Cut Length (mm)"
+  },
+  {
+   "fieldname": "no_of_logs_used",
+   "fieldtype": "Int",
+   "label": "No of Logs Used"
+  },
+  {
+   "fieldname": "no_of_billets_produced",
+   "fieldtype": "Int",
+   "label": "No of Billets Produced"
+  },
+  {
+   "fieldname": "single_billet_weight_kg",
+   "fieldtype": "Float",
+   "label": "Single Billet Weight (kg)"
+  },
+  {
+   "fieldname": "total_billet_weight_kg",
+   "fieldtype": "Float",
+   "label": "Total Billet Weight (kg)"
+  },
+  {
+   "fieldname": "butt_end_loss_kg",
+   "fieldtype": "Float",
+   "label": "Butt End Loss (kg)"
+  },
+  {
+   "fieldname": "saw_cut_loss_kg",
+   "fieldtype": "Float",
+   "label": "Saw Cut Loss (kg)"
+  },
+  {
+   "fieldname": "total_cutting_scrap_kg",
+   "fieldtype": "Float",
+   "label": "Total Cutting Scrap (kg)"
+  },
+  {
+   "fieldname": "cutting_yield_percentage",
+   "fieldtype": "Float",
+   "label": "Cutting Yield (%)"
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Data",
+   "label": "Operator"
+  },
+  {
+   "fieldname": "linked_job_card",
+   "fieldtype": "Link",
+   "label": "Linked Job Card",
+   "options": "Extrusion Job Card"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-10 18:20:22.791728",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Log to Billet Conversion",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

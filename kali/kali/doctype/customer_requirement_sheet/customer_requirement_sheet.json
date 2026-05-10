@@ -1,0 +1,129 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:req_no",
+ "creation": "2026-05-10 18:17:27.294744",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "req_no",
+  "req_date",
+  "customer",
+  "sales_order",
+  "profile_weight_required_tons",
+  "die_required",
+  "profile_length_mm",
+  "alloy_grade",
+  "temper_required",
+  "surface_finish",
+  "press_size_required",
+  "estimated_billets_needed",
+  "estimated_logs_needed",
+  "special_requirements",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "req_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Req No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "req_date",
+   "fieldtype": "Date",
+   "label": "Req Date"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "fieldname": "profile_weight_required_tons",
+   "fieldtype": "Float",
+   "label": "Profile Weight Required (tons)"
+  },
+  {
+   "fieldname": "die_required",
+   "fieldtype": "Link",
+   "label": "Die Required",
+   "options": "Die Master"
+  },
+  {
+   "fieldname": "profile_length_mm",
+   "fieldtype": "Float",
+   "label": "Profile Length (mm)"
+  },
+  {
+   "fieldname": "alloy_grade",
+   "fieldtype": "Select",
+   "label": "Alloy Grade",
+   "options": "6063\n6061\n6082\n6005"
+  },
+  {
+   "fieldname": "temper_required",
+   "fieldtype": "Select",
+   "label": "Temper Required",
+   "options": "T5\nT6\nT66\nT4"
+  },
+  {
+   "fieldname": "surface_finish",
+   "fieldtype": "Select",
+   "label": "Surface Finish",
+   "options": "Mill Finish\nAnodizing\nPowder Coating\nPolishing"
+  },
+  {
+   "fieldname": "press_size_required",
+   "fieldtype": "Select",
+   "label": "Press Size Required",
+   "options": "6 inch\n7 inch\n8 inch\n9 inch\n10 inch"
+  },
+  {
+   "fieldname": "estimated_billets_needed",
+   "fieldtype": "Float",
+   "label": "Estimated Billets Needed"
+  },
+  {
+   "fieldname": "estimated_logs_needed",
+   "fieldtype": "Float",
+   "label": "Estimated Logs Needed"
+  },
+  {
+   "fieldname": "special_requirements",
+   "fieldtype": "Text",
+   "label": "Special Requirements"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Received\nPlanning\nApproved\nIn Production\nCompleted"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-10 18:20:23.065301",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Customer Requirement Sheet",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
