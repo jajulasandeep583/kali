@@ -7,26 +7,47 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "sec_receipt",
   "log_batch_no",
+  "cb1",
   "receipt_date",
+  "sec_r2",
   "supplier",
-  "alloy_grade",
-  "log_diameter_inch",
-  "log_length_mm",
-  "no_of_logs",
-  "single_log_weight_kg",
-  "total_weight_kg",
+  "cb2",
   "heat_number",
+  "sec_specs",
+  "alloy_grade",
+  "cb3",
+  "log_diameter_inch",
+  "sec_s2",
+  "log_length_mm",
+  "cb4",
+  "no_of_logs",
+  "sec_s3",
+  "single_log_weight_kg",
+  "cb5",
+  "total_weight_kg",
+  "sec_homo",
   "homogenized",
-  "homogenizing_temp_c",
-  "homogenizing_hours",
+  "cb6",
   "homogenizing_date",
+  "sec_h2",
+  "homogenizing_temp_c",
+  "cb7",
+  "homogenizing_hours",
+  "sec_chem",
   "chemical_si",
+  "cb8",
   "chemical_mg",
+  "sec_c2",
   "chemical_fe",
+  "cb9",
   "hardness_bhn",
+  "sec_status",
   "quality_status",
+  "cb10",
   "status",
+  "sec_rem",
   "remarks"
  ],
  "fields": [
@@ -52,13 +73,15 @@
   {
    "fieldname": "alloy_grade",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Alloy Grade",
    "options": "6063\n6061\n6082\n6005"
   },
   {
    "fieldname": "log_diameter_inch",
    "fieldtype": "Select",
-   "label": "Log Diameter (inch)",
+   "in_list_view": 1,
+   "label": "Log Diameter",
    "options": "6 inch\n7 inch\n8 inch\n9 inch\n10 inch"
   },
   {
@@ -84,7 +107,7 @@
   {
    "fieldname": "heat_number",
    "fieldtype": "Data",
-   "label": "Heat Number"
+   "label": "Heat / Cast Number"
   },
   {
    "default": "0",
@@ -95,7 +118,7 @@
   {
    "fieldname": "homogenizing_temp_c",
    "fieldtype": "Float",
-   "label": "Homogenizing Temp (C)"
+   "label": "Homogenizing Temp (\u00b0C)"
   },
   {
    "fieldname": "homogenizing_hours",
@@ -110,17 +133,17 @@
   {
    "fieldname": "chemical_si",
    "fieldtype": "Float",
-   "label": "Chemical Si"
+   "label": "Si %"
   },
   {
    "fieldname": "chemical_mg",
    "fieldtype": "Float",
-   "label": "Chemical Mg"
+   "label": "Mg %"
   },
   {
    "fieldname": "chemical_fe",
    "fieldtype": "Float",
-   "label": "Chemical Fe"
+   "label": "Fe %"
   },
   {
    "fieldname": "hardness_bhn",
@@ -130,25 +153,116 @@
   {
    "fieldname": "quality_status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Quality Status",
    "options": "Approved\nRejected\nPending"
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
-   "label": "Status",
+   "in_list_view": 1,
+   "label": "Inventory Status",
    "options": "Available\nPartially Used\nConsumed\nRejected"
   },
   {
    "fieldname": "remarks",
    "fieldtype": "Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "sec_receipt",
+   "fieldtype": "Section Break",
+   "label": "Receipt Info"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_r2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_specs",
+   "fieldtype": "Section Break",
+   "label": "Log Specifications"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_s2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_s3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_homo",
+   "fieldtype": "Section Break",
+   "label": "Homogenizing"
+  },
+  {
+   "fieldname": "cb6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_h2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_chem",
+   "fieldtype": "Section Break",
+   "label": "Chemical Analysis (Mill Certificate)"
+  },
+  {
+   "fieldname": "cb8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_c2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_status",
+   "fieldtype": "Section Break",
+   "label": "Status & Disposition"
+  },
+  {
+   "fieldname": "cb10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_rem",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-10 18:20:21.663545",
+ "modified": "2026-05-10 21:22:00.468558",
  "modified_by": "Administrator",
  "module": "Kali",
  "name": "Log Master",

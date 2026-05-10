@@ -7,25 +7,47 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "sec_plan_info",
   "plan_no",
+  "cb1",
   "plan_date",
+  "sec_p2",
   "customer_req",
+  "cb2",
   "customer",
+  "sec_p3",
   "sales_order",
+  "cb3",
   "die",
+  "sec_press",
   "press",
+  "cb4",
   "press_size_inch",
+  "sec_mat",
   "alloy_grade",
+  "cb5",
   "profile_tons_planned",
+  "sec_log",
   "log_batch",
+  "cb6",
   "logs_allocated_nos",
+  "sec_log2",
   "logs_weight_allocated_kg",
+  "cb7",
   "billet_cut_length_mm",
+  "sec_log3",
   "billets_needed",
+  "cb8",
   "single_billet_weight_kg",
+  "sec_log4",
   "total_billet_weight_needed_kg",
+  "cb9",
+  "billet_source_note",
+  "sec_sched",
   "planned_date",
+  "cb10",
   "status",
+  "sec_rem",
   "remarks"
  ],
  "fields": [
@@ -69,7 +91,7 @@
   {
    "fieldname": "press",
    "fieldtype": "Link",
-   "label": "Press",
+   "label": "Press / Workstation",
    "options": "Workstation"
   },
   {
@@ -81,6 +103,7 @@
   {
    "fieldname": "alloy_grade",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Alloy Grade",
    "options": "6063\n6061\n6082"
   },
@@ -128,11 +151,12 @@
   {
    "fieldname": "planned_date",
    "fieldtype": "Date",
-   "label": "Planned Date"
+   "label": "Planned Production Date"
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Draft\nApproved\nIn Progress\nCompleted"
   },
@@ -140,12 +164,105 @@
    "fieldname": "remarks",
    "fieldtype": "Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "sec_plan_info",
+   "fieldtype": "Section Break",
+   "label": "Plan Info"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_p2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_p3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_press",
+   "fieldtype": "Section Break",
+   "label": "Press & Material"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_mat",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_log",
+   "fieldtype": "Section Break",
+   "label": "Log Allocation"
+  },
+  {
+   "fieldname": "cb6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_log2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_log3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_log4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "billet_source_note",
+   "fieldtype": "Data",
+   "label": "Billet Source Note"
+  },
+  {
+   "fieldname": "sec_sched",
+   "fieldtype": "Section Break",
+   "label": "Schedule & Status"
+  },
+  {
+   "fieldname": "cb10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_rem",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-10 18:20:23.321682",
+ "modified": "2026-05-10 21:21:59.956385",
  "modified_by": "Administrator",
  "module": "Kali",
  "name": "Production Planning Sheet",

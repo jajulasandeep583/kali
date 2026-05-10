@@ -7,25 +7,47 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "sec_conv",
   "conversion_no",
+  "cb1",
   "conversion_date",
+  "sec_c2",
   "shift",
-  "log_batch",
-  "alloy_grade",
-  "log_diameter_inch",
-  "press_size_inch",
-  "log_original_length_mm",
-  "billet_cut_length_mm",
-  "no_of_logs_used",
-  "no_of_billets_produced",
-  "single_billet_weight_kg",
-  "total_billet_weight_kg",
-  "butt_end_loss_kg",
-  "saw_cut_loss_kg",
-  "total_cutting_scrap_kg",
-  "cutting_yield_percentage",
+  "cb2",
   "operator",
+  "sec_log",
+  "log_batch",
+  "cb3",
+  "alloy_grade",
+  "sec_l2",
+  "log_diameter_inch",
+  "cb4",
+  "press_size_inch",
+  "sec_l3",
+  "log_original_length_mm",
+  "cb5",
+  "billet_cut_length_mm",
+  "sec_output",
+  "no_of_logs_used",
+  "cb6",
+  "no_of_billets_produced",
+  "sec_o2",
+  "single_billet_weight_kg",
+  "cb7",
+  "total_billet_weight_kg",
+  "sec_scrap",
+  "butt_end_loss_kg",
+  "cb8",
+  "saw_cut_loss_kg",
+  "sec_s2",
+  "total_cutting_scrap_kg",
+  "cb9",
+  "cutting_yield_percentage",
+  "sec_links",
   "linked_job_card",
+  "cb10",
+  "saw_machine_no",
+  "sec_rem",
   "remarks"
  ],
  "fields": [
@@ -62,18 +84,18 @@
   {
    "fieldname": "log_diameter_inch",
    "fieldtype": "Data",
-   "label": "Log Diameter (inch)"
+   "label": "Log Diameter"
   },
   {
    "fieldname": "press_size_inch",
    "fieldtype": "Select",
-   "label": "Press Size (inch)",
+   "label": "Press Size",
    "options": "6 inch\n7 inch\n8 inch\n9 inch\n10 inch"
   },
   {
    "fieldname": "log_original_length_mm",
    "fieldtype": "Float",
-   "label": "Log Original Length (mm)"
+   "label": "Log Length (mm)"
   },
   {
    "fieldname": "billet_cut_length_mm",
@@ -83,12 +105,12 @@
   {
    "fieldname": "no_of_logs_used",
    "fieldtype": "Int",
-   "label": "No of Logs Used"
+   "label": "Logs Used (Nos)"
   },
   {
    "fieldname": "no_of_billets_produced",
    "fieldtype": "Int",
-   "label": "No of Billets Produced"
+   "label": "Billets Produced (Nos)"
   },
   {
    "fieldname": "single_billet_weight_kg",
@@ -118,12 +140,13 @@
   {
    "fieldname": "cutting_yield_percentage",
    "fieldtype": "Float",
+   "in_list_view": 1,
    "label": "Cutting Yield (%)"
   },
   {
    "fieldname": "operator",
    "fieldtype": "Data",
-   "label": "Operator"
+   "label": "Saw Operator"
   },
   {
    "fieldname": "linked_job_card",
@@ -135,12 +158,106 @@
    "fieldname": "remarks",
    "fieldtype": "Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "sec_conv",
+   "fieldtype": "Section Break",
+   "label": "Conversion Info"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_c2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_log",
+   "fieldtype": "Section Break",
+   "label": "Log Details"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_l2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_l3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_output",
+   "fieldtype": "Section Break",
+   "label": "Output"
+  },
+  {
+   "fieldname": "cb6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_o2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_scrap",
+   "fieldtype": "Section Break",
+   "label": "Scrap & Yield"
+  },
+  {
+   "fieldname": "cb8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_s2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_links",
+   "fieldtype": "Section Break",
+   "label": "Links & Remarks"
+  },
+  {
+   "fieldname": "cb10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "saw_machine_no",
+   "fieldtype": "Data",
+   "label": "Saw Machine No"
+  },
+  {
+   "fieldname": "sec_rem",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-10 18:20:22.791728",
+ "modified": "2026-05-10 21:22:00.804305",
  "modified_by": "Administrator",
  "module": "Kali",
  "name": "Log to Billet Conversion",

@@ -7,39 +7,59 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "sec_customer_info",
   "req_no",
+  "cb1",
   "req_date",
+  "sec_cb2",
   "customer",
+  "cb2",
   "sales_order",
+  "sec_profile_req",
   "profile_weight_required_tons",
-  "die_required",
+  "cb3",
   "profile_length_mm",
+  "sec_alloy",
   "alloy_grade",
+  "cb4",
   "temper_required",
-  "surface_finish",
+  "sec_press",
   "press_size_required",
+  "cb5",
+  "surface_finish",
+  "sec_die",
+  "die_required",
+  "cb5b",
+  "special_requirements_short",
+  "sec_calc",
   "estimated_billets_needed",
+  "cb6",
   "estimated_logs_needed",
-  "special_requirements",
-  "status"
+  "sec_status",
+  "status",
+  "cb7",
+  "planned_production_date",
+  "sec_notes",
+  "special_requirements"
  ],
  "fields": [
   {
    "fieldname": "req_no",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Req No",
+   "label": "Requirement No",
    "reqd": 1,
    "unique": 1
   },
   {
    "fieldname": "req_date",
    "fieldtype": "Date",
-   "label": "Req Date"
+   "label": "Requirement Date"
   },
   {
    "fieldname": "customer",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Customer",
    "options": "Customer",
    "reqd": 1
@@ -69,6 +89,7 @@
   {
    "fieldname": "alloy_grade",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Alloy Grade",
    "options": "6063\n6061\n6082\n6005"
   },
@@ -103,19 +124,102 @@
   {
    "fieldname": "special_requirements",
    "fieldtype": "Text",
-   "label": "Special Requirements"
+   "label": "Special Requirements / Remarks"
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Received\nPlanning\nApproved\nIn Production\nCompleted"
+  },
+  {
+   "fieldname": "sec_customer_info",
+   "fieldtype": "Section Break",
+   "label": "Customer & Order Info"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_cb2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_profile_req",
+   "fieldtype": "Section Break",
+   "label": "Profile Requirements"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_alloy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_press",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_die",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cb5b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "special_requirements_short",
+   "fieldtype": "Data",
+   "label": "Customer Ref / PO No"
+  },
+  {
+   "fieldname": "sec_calc",
+   "fieldtype": "Section Break",
+   "label": "Estimated Material Required"
+  },
+  {
+   "fieldname": "cb6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sec_status",
+   "fieldtype": "Section Break",
+   "label": "Status & Notes"
+  },
+  {
+   "fieldname": "cb7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "planned_production_date",
+   "fieldtype": "Date",
+   "label": "Planned Production Date"
+  },
+  {
+   "fieldname": "sec_notes",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-10 18:20:23.065301",
+ "modified": "2026-05-10 21:21:58.363923",
  "modified_by": "Administrator",
  "module": "Kali",
  "name": "Customer Requirement Sheet",
