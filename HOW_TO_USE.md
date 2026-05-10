@@ -337,3 +337,140 @@ bench restart
    - Scrap %
    - Recovery %
 4. Save the document
+
+---
+
+## Complete Process Flow
+
+Log Receipt → Homogenizing → Log to Billet Cutting → Billet Loading → Extrusion Press → Quenching → Stretching → Cutting → Aging → Surface Treatment → QC → Packing → Dispatch
+
+---
+
+## Pre-Production Workflow
+
+1. Customer places requirement
+2. Create **Customer Requirement Sheet** — captures alloy, temper, surface finish, tonnage needed
+3. Create **Production Planning Sheet** — system calculates billets and logs needed
+4. Allocate logs from **Log Master** (linked to batch received from supplier)
+5. Create **Log to Billet Conversion** record — captures saw cutting yield, butt-end loss
+6. Billets are now ready for loading into the press
+
+---
+
+## Key Calculations
+
+
+
+---
+
+## Demo Script for Client Presentation
+
+### Step 1 — Plant Home Dashboard
+- Open http://kali.local:8000/app/alum-home
+- Show live KPI cards: Today Output, Active Jobs, Yield %, Die Alerts
+- Show process flow pipeline (clickable stages)
+- Show active job cards table with live status
+- Show die shot-life grid (red = critical dies)
+
+### Step 2 — Walk Through One Complete Order
+
+| Stage | DocType | Action |
+|-------|---------|--------|
+| 1 | Customer Requirement Sheet | Customer requests 5 tons of T5 profile |
+| 2 | Production Planning Sheet | System calculates 280 billets, 45 logs needed |
+| 3 | Log Master | Allocate LOG-2025-001 (6063, 6 inch, homogenized) |
+| 4 | Log to Billet Conversion | Cut 480mm billets, yield 94.5% |
+| 5 | Extrusion Job Card | Run press, capture billet weight, output, scrap |
+| 6 | Quality Check | Hardness, dimensions, visual — Approved |
+| 7 | Surface Treatment Order | Mill Finish / Anodizing / Powder Coat |
+| 8 | Delivery Note | Dispatch to customer |
+| 9 | Sales Invoice | Invoice raised and payment received |
+
+### Step 3 — Show Reports
+
+| Report | What to Highlight |
+|--------|-------------------|
+| Order to Dispatch Tracker | End-to-end order status in one view |
+| Die Performance Report | Red badges on dies nearing shot limit |
+| Daily Production Summary | Shift-wise tonnage and yield |
+| Press Efficiency Report | OEE and downtime per press |
+| Scrap Analysis Report | Scrap cost breakdown by category |
+
+---
+
+*Last updated: 2026-05-10 | kali app v4.0 — Log Master, Billet Conversion, Planning docs added*
+
+
+---
+
+## Complete Process Flow
+
+Log Receipt → Homogenizing → Log to Billet Cutting → Billet Loading → Extrusion Press → Quenching → Stretching → Cutting → Aging → Surface Treatment → QC → Packing → Dispatch
+
+---
+
+## Pre-Production Workflow
+
+1. Customer places requirement
+2. Create **Customer Requirement Sheet** — captures alloy, temper, surface finish, tonnage needed
+3. Create **Production Planning Sheet** — system calculates billets and logs needed
+4. Allocate logs from **Log Master** (linked to batch received from supplier)
+5. Create **Log to Billet Conversion** record — captures saw cutting yield, butt-end loss
+6. Billets are now ready for loading into the press
+
+---
+
+## Key Calculations
+
+```
+Single billet weight (kg) = pi/4 x (diameter in m)^2 x length (m) x 2700
+
+Billets needed = (tons required x 1000) / billet weight / 0.83
+
+Logs needed = billets needed / (log length / billet cut length)
+
+Cutting Yield % = Total Billet Output / (Logs Used x Single Log Weight) x 100
+
+Extrusion Yield % = Net Profile Output / Billet Input x 100
+
+Discard % = Discard Weight / Billet Input x 100
+```
+
+---
+
+## Demo Script for Client Presentation
+
+### Step 1 — Plant Home Dashboard
+- Open http://kali.local:8000/app/alum-home
+- Show live KPI cards: Today Output, Active Jobs, Yield %, Die Alerts
+- Show process flow pipeline (clickable stages)
+- Show active job cards table with live status
+- Show die shot-life grid (red = critical dies)
+
+### Step 2 — Walk Through One Complete Order
+
+| Stage | DocType | Action |
+|-------|---------|--------|
+| 1 | Customer Requirement Sheet | Customer requests 5 tons of T5 profile |
+| 2 | Production Planning Sheet | System calculates 280 billets, 45 logs needed |
+| 3 | Log Master | Allocate LOG-2025-001 (6063, 6 inch, homogenized) |
+| 4 | Log to Billet Conversion | Cut 480mm billets, yield 94.5% |
+| 5 | Extrusion Job Card | Run press, capture billet weight, output, scrap |
+| 6 | Quality Check | Hardness, dimensions, visual — Approved |
+| 7 | Surface Treatment Order | Mill Finish / Anodizing / Powder Coat |
+| 8 | Delivery Note | Dispatch to customer |
+| 9 | Sales Invoice | Invoice raised and payment received |
+
+### Step 3 — Show Reports
+
+| Report | What to Highlight |
+|--------|-------------------|
+| Order to Dispatch Tracker | End-to-end order status in one view |
+| Die Performance Report | Red badges on dies nearing shot limit |
+| Daily Production Summary | Shift-wise tonnage and yield |
+| Press Efficiency Report | OEE and downtime per press |
+| Scrap Analysis Report | Scrap cost breakdown by category |
+
+---
+
+*Last updated: 2026-05-10 | kali app v4.0 — Log Master, Billet Conversion, Planning docs added*
