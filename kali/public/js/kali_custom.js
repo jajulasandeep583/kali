@@ -1,6 +1,6 @@
 // Kali App — Custom JS for navigation badges and list view enhancements
 
-frappe.ready(function() {
+$(document).ready(function() {
 	// Load sidebar badges after page loads
 	setTimeout(load_sidebar_badges, 2000);
 });
