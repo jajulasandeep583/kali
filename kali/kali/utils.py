@@ -5,7 +5,7 @@ from datetime import date
 def get_sidebar_counts():
 	today = date.today()
 	def q(sql, *args):
-		return frappe.db.sql(sql, args or None)[0][0] or 0
+		return frappe.db.sql(sql, args or ())[0][0] or 0
 
 	return {
 		"active_jobs":    q("SELECT COUNT(*) FROM `tabExtrusion Job Card` WHERE status NOT IN ('Completed','On Hold','Pending') AND docstatus<2"),
