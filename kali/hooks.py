@@ -26,7 +26,7 @@ app_license = "MIT"
 
 # include js, css files in header of desk.html
 app_include_css = "/assets/kali/css/kali_custom.css"
-app_include_js = "/assets/kali/js/kali_custom.js"
+app_include_js = "/assets/kali/js/kali_custom.js?v=2"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/kali/css/kali.css"
