@@ -1,0 +1,21 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2026-05-12 00:00:00",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "is_standard": "Yes",
+ "modified": "2026-05-12 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Input vs Output Analysis",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Stock Entry",
+ "report_name": "Input vs Output Analysis",
+ "report_type": "Script Report",
+ "roles": [{"role": "System Manager"}, {"role": "Manufacturing User"}]
+}

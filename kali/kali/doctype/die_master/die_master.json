@@ -9,6 +9,7 @@
   "die_number",
   "die_name",
   "profile_code",
+  "linked_item",
   "die_shape",
   "alloy_grade",
   "tongue_ratio",
@@ -48,6 +49,13 @@
    "fieldname": "profile_code",
    "fieldtype": "Data",
    "label": "Profile Code"
+  },
+  {
+   "fieldname": "linked_item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Linked Item",
+   "options": "Item"
   },
   {
    "fieldname": "die_shape",
@@ -149,7 +157,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-01 00:00:00",
+ "modified": "2026-05-12 00:00:00",
  "modified_by": "Administrator",
  "module": "Kali",
  "name": "Die Master",

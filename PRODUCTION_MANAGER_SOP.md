@@ -527,6 +527,29 @@ https://github.com/jajulasandeep583/kali.git
 | Supporting | Furnace Temp Reading | Furnace temp log (child table) |
 | Supporting | Shift Job Card Detail | Shift report job details (child table) |
 
+
+---
+
+## STOCK ENTRY PROCEDURE (MANUFACTURE)
+
+### When to Create a Manufacture Stock Entry
+After each production run is complete, create a Manufacture Stock Entry to record all material movements.
+
+### Step-by-Step
+
+1. **Go to:** Stock > Stock Entry > New
+2. **Set type:** Manufacture
+3. **Add INPUT row:** Item: ALU-BILLET-6063, Source: Billet Store, Qty: actual kg consumed
+4. **Add SCRAP rows:** SCRAP-BUTT, SCRAP-FRONT, SCRAP-DISC, SCRAP-REJ -> Scrap Yard
+5. **Add FINISHED GOODS row:** Profile item -> Finished Goods Warehouse (Is Finished Item: YES)
+6. **Verify:** Total Output = Total Input
+7. **Submit** the entry
+
+### Yield Target
+- Target: 82-85% yield
+- Formula: Good Profile Kg / Total Billet Kg x 100
+- Below 80%: report to Production Manager immediately
+
 ---
 
 *SOP Version 1.0 | Aluminium Extrusion ERP*
