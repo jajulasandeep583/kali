@@ -1,0 +1,116 @@
+{
+ "app": "kali",
+ "charts": [],
+ "content": "[{\"id\": \"h12\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Plant Overview</b></span>\", \"col\": 12}}, {\"id\": \"sp0\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"s13\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Plant Home Dashboard\", \"col\": 3}}, {\"id\": \"s14\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Production Dashboard\", \"col\": 3}}, {\"id\": \"s15\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Job Card Kanban\", \"col\": 3}}, {\"id\": \"s16\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Die Room Dashboard\", \"col\": 3}}, {\"id\": \"sp1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"c17\", \"type\": \"card\", \"data\": {\"card_name\": \"Live Dashboards\", \"col\": 12}}]",
+ "creation": "2026-05-13 00:00:00",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "factory",
+ "idx": 0,
+ "indicator_color": "blue",
+ "is_hidden": 0,
+ "label": "Plant Overview",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Live Dashboards",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Plant Home Dashboard",
+   "link_count": 0,
+   "link_to": "alum-home",
+   "link_type": "Page",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Production Dashboard",
+   "link_count": 0,
+   "link_to": "alum-dashboard",
+   "link_type": "Page",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Job Card Kanban",
+   "link_count": 0,
+   "link_to": "alum-kanban",
+   "link_type": "Page",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Die Room Dashboard",
+   "link_count": 0,
+   "link_to": "die-room-dashboard",
+   "link_type": "Page",
+   "onboard": 1,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-05-13 16:00:27.954638",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Plant Overview",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "Aluminium Manufacturing",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "blue",
+   "doc_view": "",
+   "icon": "home",
+   "label": "Plant Home Dashboard",
+   "link_to": "alum-home",
+   "type": "Page"
+  },
+  {
+   "color": "green",
+   "doc_view": "",
+   "icon": "bar-chart",
+   "label": "Production Dashboard",
+   "link_to": "alum-dashboard",
+   "type": "Page"
+  },
+  {
+   "color": "orange",
+   "doc_view": "",
+   "icon": "kanban",
+   "label": "Job Card Kanban",
+   "link_to": "alum-kanban",
+   "type": "Page"
+  },
+  {
+   "color": "grey",
+   "doc_view": "",
+   "icon": "settings",
+   "label": "Die Room Dashboard",
+   "link_to": "die-room-dashboard",
+   "type": "Page"
+  }
+ ],
+ "title": "Plant Overview",
+ "type": "Workspace"
+}

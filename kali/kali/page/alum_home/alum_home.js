@@ -18,6 +18,7 @@ class AlumHome {
         this.$el = $('<div class="ah"></div>').appendTo(this.wrapper.find('.layout-main-section'));
         this._inject_css();
         this._skeleton();
+        window._ahGo = (dt, st) => { if (st) frappe.route_options = {status: st}; frappe.set_route('List', dt); };
         this.refresh();
         this._start_clock();
         this._timer = setInterval(() => this.refresh(), 60000);
@@ -62,16 +63,16 @@ class AlumHome {
         const fmt_rev = v => v >= 1e5 ? (v/1e5).toFixed(1)+' L' : '₹'+Math.round(v).toLocaleString();
         const p1run = d.press1_active > 0, p2run = d.press2_active > 0;
         const cards = [
-            { icon:'⚡', lbl: d.press1_name||'Press 1 (1500T)', val: p1run?'RUNNING':'IDLE', sub: `${d.press1_active} active jobs`, col:'green',  badge: p1run?'run':'idle', href:'/app/extrusion-job-card' },
-            { icon:'⚡', lbl: d.press2_name||'Press 2 (2500T)', val: p2run?'RUNNING':'IDLE', sub: `${d.press2_active} active jobs`, col:'green',  badge: p2run?'run':'idle', href:'/app/extrusion-job-card' },
-            { icon:'📦', lbl:"Today's Output",  val: Math.round(d.today_kg||0).toLocaleString()+' kg',  sub:'produced today',         col:'blue',   href:'/app/production-shift-report' },
-            { icon:'📋', lbl:'Active Orders',   val: d.active_orders||0,     sub:'in pipeline',          col:'blue',   href:'/app/sales-order' },
-            { icon:'⚠️', lbl:'Delayed Orders',  val: d.delayed_orders||0,    sub:'past delivery date',   col: (d.delayed_orders||0)>0?'orange':'green', href:'/app/sales-order' },
-            { icon:'💰', lbl:'Month Revenue',   val: fmt_rev(d.monthly_revenue||0), sub:'sales invoiced', col:'purple', href:'/app/sales-invoice' },
+            { icon:'⚡', lbl: d.press1_name||'Press 1 (1500T)', val: p1run?'RUNNING':'IDLE', sub: `${d.press1_active} active jobs`, col:'green',  badge: p1run?'run':'idle', dt:'Extrusion Job Card' },
+            { icon:'⚡', lbl: d.press2_name||'Press 2 (2500T)', val: p2run?'RUNNING':'IDLE', sub: `${d.press2_active} active jobs`, col:'green',  badge: p2run?'run':'idle', dt:'Extrusion Job Card' },
+            { icon:'📦', lbl:"Today's Output",  val: Math.round(d.today_kg||0).toLocaleString()+' kg',  sub:'produced today',         col:'blue',   dt:'Production Shift Report' },
+            { icon:'📋', lbl:'Active Orders',   val: d.active_orders||0,     sub:'in pipeline',          col:'blue',   dt:'Sales Order' },
+            { icon:'⚠️', lbl:'Delayed Orders',  val: d.delayed_orders||0,    sub:'past delivery date',   col: (d.delayed_orders||0)>0?'orange':'green', dt:'Sales Order' },
+            { icon:'💰', lbl:'Month Revenue',   val: fmt_rev(d.monthly_revenue||0), sub:'sales invoiced', col:'purple', dt:'Sales Invoice' },
         ];
         const COLS = { green:'#00ff88', blue:'#00d4ff', orange:'#ff9500', red:'#ff3b3b', purple:'#bf5af2' };
         $('#ah-cards').html(cards.map(c => `
-            <div class="ah-card ah-c-${c.col}" onclick="frappe.set_route('${c.href.slice(5)}')" style="cursor:pointer">
+            <div class="ah-card ah-c-${c.col}" onclick="window._ahGo('${c.dt}')" style="cursor:pointer">
                 <div style="display:flex;justify-content:space-between;align-items:flex-start">
                     <span style="font-size:1.4rem">${c.icon}</span>
                     ${c.badge ? `<span class="ah-badge ${c.badge==='run'?'b-run':'b-idle'}">${c.badge==='run'?'RUNNING':'IDLE'}</span>` : ''}
@@ -85,23 +86,24 @@ class AlumHome {
     _flow(d) {
         const f = d.flow || {};
         const stages = [
-            { icon:'📄', name:'Orders',       cnt: f.sales_orders||0,  href:'/app/sales-order' },
-            { icon:'🔩', name:'Die Ready',    cnt: f.die_active||0,    href:'/app/die-master' },
-            { icon:'🟫', name:'Billet Prep',  cnt: f['Draft']||0,      href:'/app/extrusion-job-card?status=Draft' },
-            { icon:'⚡', name:'Pressing',     cnt: (f['Billet Loaded']||0)+(f['Extrusion Running']||0), href:'/app/extrusion-job-card' },
-            { icon:'💧', name:'Quenching',    cnt: f['Quenching']||0,  href:'/app/extrusion-job-card' },
-            { icon:'🔧', name:'Stretching',   cnt: f['Stretching']||0, href:'/app/extrusion-job-card' },
-            { icon:'✂️', name:'Cutting',      cnt: f['Cutting']||0,    href:'/app/extrusion-job-card' },
-            { icon:'🔥', name:'Aging',        cnt: f['Aging']||0,      href:'/app/extrusion-job-card' },
-            { icon:'🎨', name:'Surface Tx',   cnt: f['Surface Treatment']||0, href:'/app/extrusion-job-card' },
-            { icon:'🔍', name:'QC',           cnt: (f['Quality Check']||0)+(f['Quality Hold']||0), href:'/app/quality-check' },
-            { icon:'📦', name:'Completed',    cnt: f['Completed']||0,  href:'/app/extrusion-job-card' },
-            { icon:'🚚', name:'Dispatch',     cnt: f['dispatch']||0,   href:'/app/delivery-note' },
+            { icon:'📄', name:'Orders',      cnt: f.sales_orders||0,                                    dt:'Sales Order' },
+            { icon:'🔩', name:'Die Ready',   cnt: f.die_active||0,                                      dt:'Die Master' },
+            { icon:'🟫', name:'Billet Prep', cnt: f['Draft']||0,                                        dt:'Extrusion Job Card', st:'Draft' },
+            { icon:'⚡', name:'Pressing',    cnt: (f['Billet Loaded']||0)+(f['Extrusion Running']||0),  dt:'Extrusion Job Card' },
+            { icon:'💧', name:'Quenching',   cnt: f['Quenching']||0,                                    dt:'Extrusion Job Card', st:'Quenching' },
+            { icon:'🔧', name:'Stretching',  cnt: f['Stretching']||0,                                   dt:'Extrusion Job Card', st:'Stretching' },
+            { icon:'✂️', name:'Cutting',     cnt: f['Cutting']||0,                                      dt:'Extrusion Job Card', st:'Cutting' },
+            { icon:'🔥', name:'Aging',       cnt: f['Aging']||0,                                        dt:'Extrusion Job Card', st:'Aging' },
+            { icon:'🎨', name:'Surface Tx',  cnt: f['Surface Treatment']||0,                            dt:'Extrusion Job Card', st:'Surface Treatment' },
+            { icon:'🔍', name:'QC',          cnt: (f['Quality Check']||0)+(f['Quality Hold']||0),       dt:'Quality Check' },
+            { icon:'📦', name:'Completed',   cnt: f['Completed']||0,                                    dt:'Extrusion Job Card', st:'Completed' },
+            { icon:'🚚', name:'Dispatch',    cnt: f['dispatch']||0,                                     dt:'Delivery Note' },
         ];
+        window._ahFS = stages;
         $('#ah-flow').html(stages.map((s, i) => {
             const cls = s.cnt > 5 ? 'fc-warn' : s.cnt > 0 ? 'fc-ok' : 'fc-zero';
             return (i > 0 ? '<div class="ah-arrow">›</div>' : '') +
-                `<div class="ah-stage" onclick="frappe.set_route('${s.href.slice(5)}')">
+                `<div class="ah-stage" onclick="window._ahGo(window._ahFS[${i}].dt,window._ahFS[${i}].st)">
                     <div style="font-size:1.1rem">${s.icon}</div>
                     <div class="ah-sname">${s.name}</div>
                     <div class="ah-scnt ${cls}">${s.cnt}</div>

@@ -1,0 +1,177 @@
+{
+ "app": "kali",
+ "charts": [],
+ "content": "[{\"id\": \"h31\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Raw Materials</b></span>\", \"col\": 12}}, {\"id\": \"sp0\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"s32\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Billet Receipt\", \"col\": 4}}, {\"id\": \"s33\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Purchase Order\", \"col\": 4}}, {\"id\": \"s34\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Stock Ledger Summary\", \"col\": 4}}, {\"id\": \"sp1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"c35\", \"type\": \"card\", \"data\": {\"card_name\": \"Raw Material Records\", \"col\": 4}}, {\"id\": \"c36\", \"type\": \"card\", \"data\": {\"card_name\": \"Procurement\", \"col\": 4}}, {\"id\": \"c37\", \"type\": \"card\", \"data\": {\"card_name\": \"Inventory Reports\", \"col\": 4}}]",
+ "creation": "2026-05-13 00:00:00",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "stock",
+ "idx": 0,
+ "indicator_color": "orange",
+ "is_hidden": 0,
+ "label": "Raw Materials",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Raw Material Records",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Log Master",
+   "link_count": 0,
+   "link_to": "Log Master",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Billet Receipt",
+   "link_count": 0,
+   "link_to": "Billet Receipt",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Log to Billet Conversion",
+   "link_count": 0,
+   "link_to": "Log to Billet Conversion",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Billet Cutting Log",
+   "link_count": 0,
+   "link_to": "Billet Cutting Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Procurement",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Supplier",
+   "link_count": 0,
+   "link_to": "Supplier",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Order",
+   "link_count": 0,
+   "link_to": "Purchase Order",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Receipt",
+   "link_count": 0,
+   "link_to": "Purchase Receipt",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Invoice",
+   "link_count": 0,
+   "link_to": "Purchase Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Inventory Reports",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Ledger Summary",
+   "link_count": 0,
+   "link_to": "Stock Ledger Summary",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-05-13 16:00:28.083366",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Raw Materials",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "Aluminium Manufacturing",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 4.0,
+ "shortcuts": [
+  {
+   "color": "blue",
+   "doc_view": "",
+   "icon": "package",
+   "label": "Billet Receipt",
+   "link_to": "Billet Receipt",
+   "type": "DocType"
+  },
+  {
+   "color": "orange",
+   "doc_view": "",
+   "icon": "cart",
+   "label": "Purchase Order",
+   "link_to": "Purchase Order",
+   "type": "DocType"
+  },
+  {
+   "color": "green",
+   "doc_view": "",
+   "icon": "bar-chart",
+   "label": "Stock Ledger Summary",
+   "link_to": "Stock Ledger Summary",
+   "report_ref_doctype": "Bin",
+   "type": "Report"
+  }
+ ],
+ "title": "Raw Materials",
+ "type": "Workspace"
+}

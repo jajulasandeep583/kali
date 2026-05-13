@@ -1,0 +1,108 @@
+{
+ "app": "kali",
+ "charts": [],
+ "content": "[{\"id\": \"h44\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Heat Treatment</b></span>\", \"col\": 12}}, {\"id\": \"sp0\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"s45\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Aging Oven Log\", \"col\": 4}}, {\"id\": \"s46\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Surface Treatment Order\", \"col\": 4}}, {\"id\": \"s47\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Aging Oven Tracker\", \"col\": 4}}, {\"id\": \"sp1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"c48\", \"type\": \"card\", \"data\": {\"card_name\": \"Heat Treatment Records\", \"col\": 6}}, {\"id\": \"c49\", \"type\": \"card\", \"data\": {\"card_name\": \"Heat Treatment Reports\", \"col\": 6}}]",
+ "creation": "2026-05-13 00:00:00",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "thermometer",
+ "idx": 0,
+ "indicator_color": "red",
+ "is_hidden": 0,
+ "label": "Heat Treatment",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Heat Treatment Records",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Aging Oven Log",
+   "link_count": 0,
+   "link_to": "Aging Oven Log",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Surface Treatment Order",
+   "link_count": 0,
+   "link_to": "Surface Treatment Order",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Heat Treatment Reports",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Aging Oven Tracker",
+   "link_count": 0,
+   "link_to": "Aging Oven Tracker",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-05-13 16:00:28.162340",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Heat Treatment",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "Aluminium Manufacturing",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 6.0,
+ "shortcuts": [
+  {
+   "color": "red",
+   "doc_view": "",
+   "icon": "thermometer",
+   "label": "Aging Oven Log",
+   "link_to": "Aging Oven Log",
+   "type": "DocType"
+  },
+  {
+   "color": "blue",
+   "doc_view": "",
+   "icon": "settings",
+   "label": "Surface Treatment Order",
+   "link_to": "Surface Treatment Order",
+   "type": "DocType"
+  },
+  {
+   "color": "orange",
+   "doc_view": "",
+   "icon": "bar-chart",
+   "label": "Aging Oven Tracker",
+   "link_to": "Aging Oven Tracker",
+   "report_ref_doctype": "Aging Oven Log",
+   "type": "Report"
+  }
+ ],
+ "title": "Heat Treatment",
+ "type": "Workspace"
+}

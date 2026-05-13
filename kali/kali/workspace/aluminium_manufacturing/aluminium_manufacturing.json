@@ -1,8 +1,8 @@
 {
  "app": "kali",
  "charts": [],
- "content": "[{\"id\":\"dash_hdr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>🏠 Live Dashboards</b></span>\",\"col\":12}},{\"id\":\"dash_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Dashboards\",\"col\":12}},{\"id\":\"s1_hdr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>📋 Step 1 — Sales &amp; Customer Orders</b></span>\",\"col\":12}},{\"id\":\"s1_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Step 1: Sales and Customer Orders\",\"col\":12}},{\"id\":\"s2_hdr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>📅 Step 2 — Production Planning</b></span>\",\"col\":12}},{\"id\":\"s2_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Step 2: Production Planning\",\"col\":12}},{\"id\":\"s3_hdr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>📦 Step 3 — Incoming Materials</b></span>\",\"col\":12}},{\"id\":\"s3_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Step 3: Incoming Materials\",\"col\":12}},{\"id\":\"s4_hdr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>✂️ Step 4 — Billet Preparation</b></span>\",\"col\":12}},{\"id\":\"s4_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Step 4: Billet Preparation\",\"col\":12}},{\"id\":\"s5_hdr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>⚡ Step 5 — Extrusion</b></span>\",\"col\":12}},{\"id\":\"s5_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Step 5: Extrusion\",\"col\":12}},{\"id\":\"s6_hdr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>🔥 Step 6 — Heat Treatment &amp; Finishing</b></span>\",\"col\":12}},{\"id\":\"s6_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Step 6: Heat Treatment and Finishing\",\"col\":12}},{\"id\":\"s7_hdr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>✅ Step 7 — Quality Control</b></span>\",\"col\":12}},{\"id\":\"s7_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Step 7: Quality Control\",\"col\":12}},{\"id\":\"s8_hdr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>📝 Step 8 — Shift Operations</b></span>\",\"col\":12}},{\"id\":\"s8_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Step 8: Shift Operations\",\"col\":12}},{\"id\":\"masters_hdr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>🔧 Masters &amp; Setup</b></span>\",\"col\":12}},{\"id\":\"masters_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters and Setup\",\"col\":12}},{\"id\":\"reports_hdr\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>📈 Reports &amp; Analytics</b></span>\",\"col\":12}},{\"id\":\"reports_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports and Analytics\",\"col\":12}}]",
- "creation": "2026-05-02 23:02:56.028171",
+ "content": "[{\"id\": \"h1\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Aluminium Manufacturing</b></span>\", \"col\": 12}}, {\"id\": \"sp0\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"s2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Plant Overview\", \"col\": 3}}, {\"id\": \"s3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Sales and Orders\", \"col\": 3}}, {\"id\": \"s4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Production Planning\", \"col\": 3}}, {\"id\": \"s5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Raw Materials\", \"col\": 3}}, {\"id\": \"s6\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Extrusion Production\", \"col\": 3}}, {\"id\": \"s7\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Heat Treatment\", \"col\": 3}}, {\"id\": \"s8\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Die Management\", \"col\": 3}}, {\"id\": \"s9\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Quality Control\", \"col\": 3}}, {\"id\": \"s10\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Reports and Analytics\", \"col\": 3}}, {\"id\": \"s11\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Masters and Setup\", \"col\": 3}}]",
+ "creation": "2026-05-13 15:33:46.828863",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -10,475 +10,12 @@
  "hide_custom": 0,
  "icon": "manufacturing",
  "idx": 0,
- "indicator_color": "orange",
+ "indicator_color": "blue",
  "is_hidden": 0,
  "label": "Aluminium Manufacturing",
  "link_type": "DocType",
- "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Dashboards",
-   "link_count": 4,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "🏭 Plant Home Dashboard",
-   "link_count": 0,
-   "link_to": "alum-home",
-   "link_type": "Page",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "📊 Production Dashboard",
-   "link_count": 0,
-   "link_to": "alum-dashboard",
-   "link_type": "Page",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "📋 Job Card Kanban",
-   "link_count": 0,
-   "link_to": "alum-kanban",
-   "link_type": "Page",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "🔧 Die Room Dashboard",
-   "link_count": 0,
-   "link_to": "die-room-dashboard",
-   "link_type": "Page",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Step 1: Sales and Customer Orders",
-   "link_count": 4,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Customer",
-   "link_count": 0,
-   "link_to": "Customer",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Sales Order",
-   "link_count": 0,
-   "link_to": "Sales Order",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Customer Requirement Sheet",
-   "link_count": 0,
-   "link_to": "Customer Requirement Sheet",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Customer Drawing",
-   "link_count": 0,
-   "link_to": "Customer Drawing",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Step 2: Production Planning",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Production Planning Sheet",
-   "link_count": 0,
-   "link_to": "Production Planning Sheet",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Step 3: Incoming Materials",
-   "link_count": 3,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Billet Receipt",
-   "link_count": 0,
-   "link_to": "Billet Receipt",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Log Master",
-   "link_count": 0,
-   "link_to": "Log Master",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Log to Billet Conversion",
-   "link_count": 0,
-   "link_to": "Log to Billet Conversion",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Step 4: Billet Preparation",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Billet Cutting Log",
-   "link_count": 0,
-   "link_to": "Billet Cutting Log",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Furnace Log",
-   "link_count": 0,
-   "link_to": "Furnace Log",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Step 5: Extrusion",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Extrusion Job Card",
-   "link_count": 0,
-   "link_to": "Extrusion Job Card",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Press Log",
-   "link_count": 0,
-   "link_to": "Press Log",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Step 6: Heat Treatment and Finishing",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Aging Oven Log",
-   "link_count": 0,
-   "link_to": "Aging Oven Log",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Surface Treatment Order",
-   "link_count": 0,
-   "link_to": "Surface Treatment Order",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Step 7: Quality Control",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Quality Check",
-   "link_count": 0,
-   "link_to": "Quality Check",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Scrap Record",
-   "link_count": 0,
-   "link_to": "Scrap Record",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Step 8: Shift Operations",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Production Shift Report",
-   "link_count": 0,
-   "link_to": "Production Shift Report",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Die Maintenance Log",
-   "link_count": 0,
-   "link_to": "Die Maintenance Log",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Masters and Setup",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Item",
-   "link_count": 0,
-   "link_to": "Item",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Die Master",
-   "link_count": 0,
-   "link_to": "Die Master",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Reports and Analytics",
-   "link_count": 9,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Daily Production Summary",
-   "link_count": 0,
-   "link_to": "Daily Production Summary",
-   "link_type": "Report",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Customer Order Status",
-   "link_count": 0,
-   "link_to": "Customer Order Status",
-   "link_type": "Report",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Order to Dispatch Tracker",
-   "link_count": 0,
-   "link_to": "Order to Dispatch Tracker",
-   "link_type": "Report",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Press Efficiency Report",
-   "link_count": 0,
-   "link_to": "Press Efficiency Report",
-   "link_type": "Report",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Shift Summary Report",
-   "link_count": 0,
-   "link_to": "Shift Summary Report",
-   "link_type": "Report",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Die Performance Report",
-   "link_count": 0,
-   "link_to": "Die Performance Report",
-   "link_type": "Report",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Die Health Dashboard",
-   "link_count": 0,
-   "link_to": "Die Health Dashboard",
-   "link_type": "Report",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Scrap Analysis Report",
-   "link_count": 0,
-   "link_to": "Scrap Analysis Report",
-   "link_type": "Report",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Aging Oven Tracker",
-   "link_count": 0,
-   "link_to": "Aging Oven Tracker",
-   "link_type": "Report",
-   "onboard": 1,
-   "type": "Link"
-  }
- ],
- "modified": "2026-05-12 12:00:00.000000",
+ "links": [],
+ "modified": "2026-05-13 16:00:27.549323",
  "modified_by": "Administrator",
  "module": "Kali",
  "name": "Aluminium Manufacturing",
@@ -487,10 +24,90 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "restrict_to_domain": "",
  "roles": [],
  "sequence_id": 1.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "blue",
+   "doc_view": "",
+   "icon": "factory",
+   "label": "Plant Overview",
+   "type": "URL",
+   "url": "/app/plant-overview"
+  },
+  {
+   "color": "green",
+   "doc_view": "",
+   "icon": "cart",
+   "label": "Sales and Orders",
+   "type": "URL",
+   "url": "/app/sales-and-orders"
+  },
+  {
+   "color": "purple",
+   "doc_view": "",
+   "icon": "calendar",
+   "label": "Production Planning",
+   "type": "URL",
+   "url": "/app/production-planning"
+  },
+  {
+   "color": "orange",
+   "doc_view": "",
+   "icon": "stock",
+   "label": "Raw Materials",
+   "type": "URL",
+   "url": "/app/raw-materials"
+  },
+  {
+   "color": "orange",
+   "doc_view": "",
+   "icon": "manufacturing",
+   "label": "Extrusion Production",
+   "type": "URL",
+   "url": "/app/extrusion-production"
+  },
+  {
+   "color": "red",
+   "doc_view": "",
+   "icon": "thermometer",
+   "label": "Heat Treatment",
+   "type": "URL",
+   "url": "/app/heat-treatment"
+  },
+  {
+   "color": "grey",
+   "doc_view": "",
+   "icon": "settings",
+   "label": "Die Management",
+   "type": "URL",
+   "url": "/app/die-management"
+  },
+  {
+   "color": "cyan",
+   "doc_view": "",
+   "icon": "check",
+   "label": "Quality Control",
+   "type": "URL",
+   "url": "/app/quality-control"
+  },
+  {
+   "color": "blue",
+   "doc_view": "",
+   "icon": "bar-chart",
+   "label": "Reports and Analytics",
+   "type": "URL",
+   "url": "/app/reports-and-analytics"
+  },
+  {
+   "color": "darkgrey",
+   "doc_view": "",
+   "icon": "tools",
+   "label": "Masters and Setup",
+   "type": "URL",
+   "url": "/app/masters-and-setup"
+  }
+ ],
  "title": "Aluminium Manufacturing",
  "type": "Workspace"
 }

@@ -1,0 +1,218 @@
+{
+ "app": "kali",
+ "charts": [],
+ "content": "[{\"id\": \"h62\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Reports and Analytics</b></span>\", \"col\": 12}}, {\"id\": \"sp0\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"s63\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Daily Production Summary\", \"col\": 4}}, {\"id\": \"s64\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customer Order Status\", \"col\": 4}}, {\"id\": \"s65\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Die Health Dashboard\", \"col\": 4}}, {\"id\": \"sp1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"c66\", \"type\": \"card\", \"data\": {\"card_name\": \"Production Reports\", \"col\": 4}}, {\"id\": \"c67\", \"type\": \"card\", \"data\": {\"card_name\": \"Die & Equipment Reports\", \"col\": 4}}, {\"id\": \"c68\", \"type\": \"card\", \"data\": {\"card_name\": \"Sales & Order Reports\", \"col\": 4}}, {\"id\": \"sp2\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"c69\", \"type\": \"card\", \"data\": {\"card_name\": \"Scrap & Inventory Reports\", \"col\": 12}}]",
+ "creation": "2026-05-13 00:00:00",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "bar-chart",
+ "idx": 0,
+ "indicator_color": "blue",
+ "is_hidden": 0,
+ "label": "Reports and Analytics",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Production Reports",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Daily Production Summary",
+   "link_count": 0,
+   "link_to": "Daily Production Summary",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Press Efficiency Report",
+   "link_count": 0,
+   "link_to": "Press Efficiency Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Shift Summary Report",
+   "link_count": 0,
+   "link_to": "Shift Summary Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Input vs Output Analysis",
+   "link_count": 0,
+   "link_to": "Input vs Output Analysis",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Die & Equipment Reports",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Die Performance Report",
+   "link_count": 0,
+   "link_to": "Die Performance Report",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Die Health Dashboard",
+   "link_count": 0,
+   "link_to": "Die Health Dashboard",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Aging Oven Tracker",
+   "link_count": 0,
+   "link_to": "Aging Oven Tracker",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales & Order Reports",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Customer Order Status",
+   "link_count": 0,
+   "link_to": "Customer Order Status",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Order to Dispatch Tracker",
+   "link_count": 0,
+   "link_to": "Order to Dispatch Tracker",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Scrap & Inventory Reports",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Scrap Analysis Report",
+   "link_count": 0,
+   "link_to": "Scrap Analysis Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Scrap Value Report",
+   "link_count": 0,
+   "link_to": "Scrap Value Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Ledger Summary",
+   "link_count": 0,
+   "link_to": "Stock Ledger Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-05-13 16:00:28.255320",
+ "modified_by": "Administrator",
+ "module": "Kali",
+ "name": "Reports and Analytics",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "Aluminium Manufacturing",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 9.0,
+ "shortcuts": [
+  {
+   "color": "blue",
+   "doc_view": "",
+   "icon": "bar-chart",
+   "label": "Daily Production Summary",
+   "link_to": "Daily Production Summary",
+   "report_ref_doctype": "Extrusion Job Card",
+   "type": "Report"
+  },
+  {
+   "color": "green",
+   "doc_view": "",
+   "icon": "cart",
+   "label": "Customer Order Status",
+   "link_to": "Customer Order Status",
+   "report_ref_doctype": "Sales Order",
+   "type": "Report"
+  },
+  {
+   "color": "grey",
+   "doc_view": "",
+   "icon": "settings",
+   "label": "Die Health Dashboard",
+   "link_to": "Die Health Dashboard",
+   "report_ref_doctype": "Die Master",
+   "type": "Report"
+  }
+ ],
+ "title": "Reports and Analytics",
+ "type": "Workspace"
+}
